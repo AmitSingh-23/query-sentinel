@@ -1,0 +1,31 @@
+[theme]
+# V3 light peach glass (presentation only). Canvas gradient + glass panels live in dashboard/components.py.
+base = "light"
+primaryColor = "#18243A"
+backgroundColor = "#F1EEEA"
+secondaryBackgroundColor = "#F4F1EC"
+textColor = "#162238"
+font = "sans serif"
+linkColor = "#A64F20"
+codeBackgroundColor = "#FAFAF8"
+borderColor = "#D8D5D0"
+dataframeBorderColor = "#E3DED7"
+dataframeHeaderBackgroundColor = "#F4F1EC"
+dataframeHeaderTextColor = "#5C626B"
+baseRadius = "10px"
+buttonRadius = "10px"
+redColor = "#AC2F3E"
+greenColor = "#1D654D"
+orangeColor = "#A64F20"
+yellowColor = "#805308"
+blueColor = "#2F5E8C"
+
+[theme.sidebar]
+backgroundColor = "#F4F1EC"
+secondaryBackgroundColor = "#FAFAF8"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

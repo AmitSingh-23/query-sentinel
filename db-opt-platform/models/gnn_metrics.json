@@ -1,0 +1,114 @@
+{
+  "train_size": 28,
+  "val_size": 9,
+  "best_val_accuracy": 1.0,
+  "heldout_same_distribution": {
+    "accuracy": 1.0,
+    "n": 11,
+    "confusion": [
+      [
+        11,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "heldout_unseen_template_variants": {
+    "accuracy": 0.0,
+    "n": 0,
+    "confusion": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "unseen_variants": {
+    "0": [
+      "seq_under_agg"
+    ],
+    "1": [
+      "merge_big"
+    ],
+    "2": [
+      "sort_then_group"
+    ],
+    "3": [
+      "limit_index_order"
+    ]
+  },
+  "class_balance_train": {
+    "0": 28
+  },
+  "epochs": 30,
+  "lr": 0.01,
+  "seed": 1234,
+  "train_seconds": 0.7,
+  "history_tail": [
+    {
+      "epoch": 26,
+      "loss": 0.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 27,
+      "loss": 0.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 28,
+      "loss": 0.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 29,
+      "loss": 0.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 30,
+      "loss": 0.0,
+      "val_accuracy": 1.0
+    }
+  ],
+  "label_source": "synthetic scenario generator (see app/gnn/training.py)"
+}

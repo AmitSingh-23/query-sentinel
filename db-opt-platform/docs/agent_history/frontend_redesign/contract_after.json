@@ -1,0 +1,4604 @@
+{
+ "initial": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "find_workload": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "POST",
+    "path": "/api/v1/nl/ask",
+    "json": {
+     "question": "weekly sales dashboard slow"
+    },
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "all_tabs": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "upload_mode": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/data/datasets",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "dataset_source": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "demo_run": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cd2078e9b6ca/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fdb22bfaaa61/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bbb689fc7bee/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f9d4bb7f1b0c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_80855fff6214/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_83276c608e5c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0be846044fe8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3499a02a5774/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_89f3331654af/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_515acb7a5aed/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f75bc1fc0413/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_507783d8a18b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bbf519bfdd1a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bc779c1aa29c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c4757aa410b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_541ba984e358/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d2831b6db5ec/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d4563f85a5e4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8954e8523886/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0af2498cb0fe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8bc0cc379fda/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3673774f9661/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f85920af21bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f88b0dc2de9d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dba68dd31ef6/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ab87b624f240/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_4232072ca6d4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_330a22c984c0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_98ca04a4e3f2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_4a7f942dd93c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a96e1622ae0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_35e425926aa9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2215189efc93/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0619308a2554/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_39f23c44b3dc/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3e5c60cde9af/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8ce596e916e8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f5303f2a7cd2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7c889dcbd661/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f52bbbe630cb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_732825e9349a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e1636fb83db5/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_985e310dc697/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6a9f1ab9fb7e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ff5920ffeabe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fa474e7f4b2c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9fb43e81727e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7167b3e50d5b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9c7afdd9cb6c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_27b9ed640468/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_33fdd589797a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_02df3ada887f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a34f30b3d461/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_eb79a22dcde2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8bb945d29a83/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7fda76cc222a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d5fa2b0fd0b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_afe9eb3e8b47/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6e9f045840b1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_47cae5e9fbde/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f2cee1e3de4a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f22edecd787a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_67a01701928c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7093d0aa4dc2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f504736814c6/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ba24a418f3d9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2fc2724097e9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cdc7469699d7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_765b40dbd826/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_577eb09d50bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e9a801ee0b25/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_88dce02bd371/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_da43fa41b1aa/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_878580f91e26/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ea0c16207fc7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d4ee124c581a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7a1087fc3a2e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_282bfe7eeeeb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fa764b782149/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d1526863d53f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_af6cc9034a8e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6bcdcb59b4b9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b59ffeea3d16/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a4c5aaea0bb0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7506b9f3663e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_59e1dab9ff0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ab807a3efb9b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6f0b96304726/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_72acf4b0fd58/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3d6f45820328/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c2d67cefc4ef/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6ab0c8f7c341/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ddbbdcff7c45/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8c3c9c56a802/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_de31dbbc61ca/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0a8836468cd0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_054b3183624b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_06f569c4b84a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5bffbd00455c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_be08a7d98df1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e331d2eca2bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_caccac92d9e1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1b223c95c07d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8f75d1d8d323/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ef2a3e6c4bde/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_321c135adc64/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_41b727487ebd/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f25d79852ffa/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ddaa5ba41d11/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7e025fe9f973/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c36cd7effbbb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d02becb047d3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c431f8795dcf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f11f613999c7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_11c9f66117bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7eabebab9403/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_959d2493c36f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bdd460a12ffb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_212e1087ebf3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2bd36b7f0f66/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_35b1a0582a2d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_95abbec5ac05/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_995e2ed1c549/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_053f4be0d71f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b22fc29ad676/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6b684d1cbdb7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dc1e5e26d1e4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9e4fb4e1a665/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d175532a14c5/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0665b88c81a7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0a206111c2a9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_53b6f0d68f63/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1c7a893edf79/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7853a545064c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ac29f0f7ff77/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_99ba3c73ff0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_74e5f640be89/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2c2610b1d3ce/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0f47960096b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5b8bc0509874/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e346c13d2b47/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9dade893ff3a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3fd76fdeecd1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b2685efc39c0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7722e4304211/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_74f3aa1c3411/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0988b147d234/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f47c8413c546/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f8ce07b5ca43/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b0e8ca4bf36b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_403364aefadb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e3385f0430d7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_997f56769705/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5e0e9aacfadd/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3e509b21225d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_abcf3784c645/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1da3239921a8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2f472361a7de/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_236dcbd963de/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2654d94c883c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dd25cea2d2be/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cc9dbf928dd2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e58b5e2ada6a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_56fa1dcca20e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5bf74d1a2efb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7da5ac8266fe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5cd7d9a967da/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_460b173e9ec8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_73f68c098c17/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9e14e13a27ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_97d1a12bbce9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d588f9c9ea6e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ce427fab37c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bd6341c8dcd4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fc3abdd5e02d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f5fab646864e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_51af20010ca4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cfb2bf68e4e3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0fa999029541/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3989f8d6debf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5075d1416cf8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cd2078e9b6ca/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fdb22bfaaa61/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bbb689fc7bee/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f9d4bb7f1b0c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_80855fff6214/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_83276c608e5c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0be846044fe8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3499a02a5774/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_89f3331654af/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_515acb7a5aed/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f75bc1fc0413/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_507783d8a18b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bbf519bfdd1a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bc779c1aa29c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c4757aa410b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_541ba984e358/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d2831b6db5ec/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d4563f85a5e4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8954e8523886/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0af2498cb0fe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8bc0cc379fda/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3673774f9661/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f85920af21bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f88b0dc2de9d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dba68dd31ef6/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ab87b624f240/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_4232072ca6d4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_330a22c984c0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_98ca04a4e3f2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_4a7f942dd93c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a96e1622ae0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_35e425926aa9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2215189efc93/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0619308a2554/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_39f23c44b3dc/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3e5c60cde9af/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8ce596e916e8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f5303f2a7cd2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7c889dcbd661/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f52bbbe630cb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_732825e9349a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e1636fb83db5/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_985e310dc697/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6a9f1ab9fb7e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ff5920ffeabe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fa474e7f4b2c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9fb43e81727e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7167b3e50d5b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9c7afdd9cb6c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_27b9ed640468/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_33fdd589797a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_02df3ada887f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a34f30b3d461/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_eb79a22dcde2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8bb945d29a83/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7fda76cc222a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d5fa2b0fd0b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_afe9eb3e8b47/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6e9f045840b1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_47cae5e9fbde/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f2cee1e3de4a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f22edecd787a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_67a01701928c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7093d0aa4dc2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f504736814c6/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ba24a418f3d9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2fc2724097e9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cdc7469699d7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_765b40dbd826/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_577eb09d50bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e9a801ee0b25/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_88dce02bd371/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_da43fa41b1aa/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_878580f91e26/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ea0c16207fc7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d4ee124c581a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7a1087fc3a2e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_282bfe7eeeeb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fa764b782149/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d1526863d53f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_af6cc9034a8e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6bcdcb59b4b9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b59ffeea3d16/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_a4c5aaea0bb0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7506b9f3663e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_59e1dab9ff0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ab807a3efb9b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6f0b96304726/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_72acf4b0fd58/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3d6f45820328/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c2d67cefc4ef/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6ab0c8f7c341/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ddbbdcff7c45/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8c3c9c56a802/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_de31dbbc61ca/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0a8836468cd0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_054b3183624b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_06f569c4b84a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5bffbd00455c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_be08a7d98df1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e331d2eca2bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_caccac92d9e1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1b223c95c07d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_8f75d1d8d323/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ef2a3e6c4bde/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_321c135adc64/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_41b727487ebd/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f25d79852ffa/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ddaa5ba41d11/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7e025fe9f973/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c36cd7effbbb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d02becb047d3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_c431f8795dcf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f11f613999c7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_11c9f66117bf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7eabebab9403/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_959d2493c36f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bdd460a12ffb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_212e1087ebf3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2bd36b7f0f66/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_35b1a0582a2d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_95abbec5ac05/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_995e2ed1c549/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_053f4be0d71f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b22fc29ad676/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_6b684d1cbdb7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dc1e5e26d1e4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9e4fb4e1a665/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d175532a14c5/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0665b88c81a7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0a206111c2a9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_53b6f0d68f63/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1c7a893edf79/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7853a545064c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_ac29f0f7ff77/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_99ba3c73ff0f/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_74e5f640be89/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2c2610b1d3ce/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0f47960096b0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5b8bc0509874/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e346c13d2b47/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9dade893ff3a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3fd76fdeecd1/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b2685efc39c0/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7722e4304211/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_74f3aa1c3411/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0988b147d234/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f47c8413c546/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f8ce07b5ca43/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_b0e8ca4bf36b/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_403364aefadb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e3385f0430d7/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_997f56769705/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5e0e9aacfadd/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3e509b21225d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_abcf3784c645/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_1da3239921a8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2f472361a7de/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_236dcbd963de/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_2654d94c883c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_dd25cea2d2be/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cc9dbf928dd2/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_e58b5e2ada6a/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_56fa1dcca20e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5bf74d1a2efb/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_7da5ac8266fe/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5cd7d9a967da/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_460b173e9ec8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_73f68c098c17/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_9e14e13a27ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_97d1a12bbce9/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_d588f9c9ea6e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ce427fab37c/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_bd6341c8dcd4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_fc3abdd5e02d/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_f5fab646864e/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_51af20010ca4/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_cfb2bf68e4e3/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0fa999029541/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_3989f8d6debf/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_5075d1416cf8/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "POST",
+    "path": "/api/v1/optimize/async",
+    "json": {
+     "sql": "SELECT o.order_id, o.order_date, o.total_amount, i.quantity, i.unit_price\nFROM orders o\nJOIN order_items i ON i.order_id = o.order_id\nWHERE o.tenant_id = '337ea2df-b09b-4a5c-badc-c32ac1590f53'\n  AND i.product_sku = 'SKU-00042'\nORDER BY o.order_date DESC\nLIMIT 50"
+    },
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/stream/qs-b3608543e703407d",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/report/qs-b3608543e703407d",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "ask_db": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "POST",
+    "path": "/api/v1/nlq/ask",
+    "json": {
+     "question": "count by variable",
+     "data_source_id": "dyn_0ba2d7c232ab",
+     "optimize": true
+    },
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ },
+ "run_sql": {
+  "calls": [
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/demo/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/examples",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/upgrade/status",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/sources/dyn_0ba2d7c232ab/schema",
+    "json": null,
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "POST",
+    "path": "/api/v1/nlq/run",
+    "json": {
+     "sql": "SELECT variable, count(*) FROM enterprise_survey2 GROUP BY 1",
+     "data_source_id": "dyn_0ba2d7c232ab",
+     "optimize": true
+    },
+    "content_bytes": null,
+    "headers": [
+     "x-session-id"
+    ]
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/workload",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   },
+   {
+    "m": "GET",
+    "path": "/api/v1/hygiene",
+    "json": null,
+    "content_bytes": null,
+    "headers": []
+   }
+  ],
+  "exceptions": []
+ }
+}

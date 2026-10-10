@@ -1,0 +1,998 @@
+{
+ "algorithm": "hierarchical tabular Q-learning (R7)",
+ "hyperparameters": {
+  "alpha": 0.2,
+  "gamma": 0.9,
+  "epsilon_decay": 0.993,
+  "max_episodes": 500,
+  "max_steps_per_episode": 3
+ },
+ "reward": "w_freq*normalized_planner_cost_reduction - storage - write - redundancy - risk (app/rl/environment.py)",
+ "training": {
+  "episodes": 500,
+  "stop_reason": "max_episodes",
+  "curriculum_levels": null,
+  "replay_size": null,
+  "training_reward_moving_avg": [
+   0.2963,
+   0.3778,
+   0.4997,
+   0.6148,
+   0.5045,
+   0.4929,
+   0.5555,
+   0.4397,
+   0.5906,
+   0.641
+  ],
+  "final_epsilon": 0.05,
+  "train_seconds": 2.7
+ },
+ "evaluation_seen_templates": {
+  "episodes": 30,
+  "mean_reward": 0.551,
+  "action_distribution": {
+   "ADD_INDEX": 29,
+   "NO_CHANGE": 17,
+   "REWRITE_SQL": 4
+  },
+  "recommendation_validity": 1.0,
+  "mean_planner_cost_reduction_pct": 59.92,
+  "metric_note": "planner-estimated (HypoPG/EXPLAIN) cost reduction - not measured runtime",
+  "per_pattern": [
+   {
+    "pattern": "tenant_date_report",
+    "reward": 0.0663,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 13.13
+   },
+   {
+    "pattern": "tenant_date_report",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "sku_join_tenant",
+    "reward": 0.8512,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 93.61
+   },
+   {
+    "pattern": "sku_join_tenant",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "correlated_count",
+    "reward": 0.9771,
+    "actions": [
+     "REWRITE_SQL:correlated_count_subquery_to_left_join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 99.71
+   },
+   {
+    "pattern": "correlated_count",
+    "reward": 0.9792,
+    "actions": [
+     "REWRITE_SQL:correlated_count_subquery_to_left_join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 99.92
+   },
+   {
+    "pattern": "email_lookup",
+    "reward": 0.9394,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.7
+   },
+   {
+    "pattern": "email_lookup",
+    "reward": 0.9394,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.7
+   },
+   {
+    "pattern": "status_date_count",
+    "reward": 0.8574,
+    "actions": [
+     "ADD_INDEX:partial:range|partial",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 86.83
+   },
+   {
+    "pattern": "status_date_count",
+    "reward": 0.89,
+    "actions": [
+     "ADD_INDEX:partial:range|partial",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 90.37
+   },
+   {
+    "pattern": "cast_date_tenant",
+    "reward": 0.9287,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 99.38
+   },
+   {
+    "pattern": "cast_date_tenant",
+    "reward": 0.9287,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 99.37
+   },
+   {
+    "pattern": "sku_aggregate",
+    "reward": 0.932,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 97.96
+   },
+   {
+    "pattern": "sku_aggregate",
+    "reward": 0.932,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 97.96
+   },
+   {
+    "pattern": "tier_join_count",
+    "reward": -0.1352,
+    "actions": [
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:partial:join|partial"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "tier_join_count",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "point_lookup",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "point_lookup",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "amount_range_top",
+    "reward": 0.9518,
+    "actions": [
+     "ADD_INDEX:single:range"
+    ],
+    "planner_cost_reduction_pct": 98.43
+   },
+   {
+    "pattern": "amount_range_top",
+    "reward": 0.9518,
+    "actions": [
+     "ADD_INDEX:single:range"
+    ],
+    "planner_cost_reduction_pct": 98.43
+   },
+   {
+    "pattern": "complex_multi_join",
+    "reward": 0.7833,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:partial:join|partial",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 91.4
+   },
+   {
+    "pattern": "complex_multi_join",
+    "reward": 0.7926,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:partial:join|partial",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 92.28
+   },
+   {
+    "pattern": "nested_aggregation",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "nested_aggregation",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "heavy_sorting",
+    "reward": 0.8676,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+order",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 95.02
+   },
+   {
+    "pattern": "heavy_sorting",
+    "reward": 0.8777,
+    "actions": [
+     "ADD_INDEX:covering:eq+eq+order+inc",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 99.02
+   },
+   {
+    "pattern": "not_in_subquery",
+    "reward": 0.7485,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:composite:eq+join"
+    ],
+    "planner_cost_reduction_pct": 86.7
+   },
+   {
+    "pattern": "not_in_subquery",
+    "reward": 0.4694,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:composite:eq+join"
+    ],
+    "planner_cost_reduction_pct": 58.79
+   },
+   {
+    "pattern": "window_func_query",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "window_func_query",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   }
+  ]
+ },
+ "evaluation_unseen_templates": {
+  "episodes": 21,
+  "mean_reward": 0.5832,
+  "action_distribution": {
+   "ADD_INDEX": 33,
+   "NO_CHANGE": 6,
+   "REWRITE_SQL": 3
+  },
+  "recommendation_validity": 1.0,
+  "mean_planner_cost_reduction_pct": 68.4,
+  "metric_note": "planner-estimated (HypoPG/EXPLAIN) cost reduction - not measured runtime",
+  "per_pattern": [
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1633,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 0.82
+   },
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1669,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 0.45
+   },
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1674,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 0.41
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.8336,
+    "actions": [
+     "ADD_INDEX:partial:range|partial",
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.47
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.8034,
+    "actions": [
+     "ADD_INDEX:partial:range|partial",
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 96.65
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.8247,
+    "actions": [
+     "ADD_INDEX:partial:range|partial",
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 98.58
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.8698,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.8698,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.8698,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.8475,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 86.75
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.8577,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 87.77
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.931,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 95.1
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.744,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.744,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.744,
+    "actions": [
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   }
+  ]
+ },
+ "baseline_fallback_policy_unseen": {
+  "episodes": 21,
+  "mean_reward": 0.5534,
+  "action_distribution": {
+   "ADD_INDEX": 39,
+   "REWRITE_SQL": 3,
+   "NO_CHANGE": 3
+  },
+  "recommendation_validity": 1.0,
+  "mean_planner_cost_reduction_pct": 68.41,
+  "metric_note": "planner-estimated (HypoPG/EXPLAIN) cost reduction - not measured runtime",
+  "per_pattern": [
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1865,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:covering:eq+range+inc"
+    ],
+    "planner_cost_reduction_pct": 0.86
+   },
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1902,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:covering:eq+range+inc"
+    ],
+    "planner_cost_reduction_pct": 0.49
+   },
+   {
+    "pattern": "correlated_sum_unseen",
+    "reward": -0.1906,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:covering:eq+range+inc"
+    ],
+    "planner_cost_reduction_pct": 0.45
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.8136,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:partial:range|partial"
+    ],
+    "planner_cost_reduction_pct": 99.47
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.7834,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:partial:range|partial"
+    ],
+    "planner_cost_reduction_pct": 96.65
+   },
+   {
+    "pattern": "tenant_status_date_unseen",
+    "reward": 0.8047,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+range",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:partial:range|partial"
+    ],
+    "planner_cost_reduction_pct": 98.58
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.7244,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.7244,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "items_date_join_unseen",
+    "reward": 0.7244,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.47
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "email_in_unseen",
+    "reward": 0.9351,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.26
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.8475,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 86.75
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.8577,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 87.77
+   },
+   {
+    "pattern": "cast_date_status_unseen",
+    "reward": 0.931,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range"
+    ],
+    "planner_cost_reduction_pct": 95.1
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "complex_having_unseen",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.724,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.724,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   },
+   {
+    "pattern": "double_join_filter_unseen",
+    "reward": 0.724,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 95.43
+   }
+  ]
+ },
+ "baseline_fallback_policy_seen": {
+  "episodes": 30,
+  "mean_reward": 0.5204,
+  "action_distribution": {
+   "ADD_INDEX": 49,
+   "NO_CHANGE": 5,
+   "REWRITE_SQL": 4
+  },
+  "recommendation_validity": 1.0,
+  "mean_planner_cost_reduction_pct": 61.25,
+  "metric_note": "planner-estimated (HypoPG/EXPLAIN) cost reduction - not measured runtime",
+  "per_pattern": [
+   {
+    "pattern": "tenant_date_report",
+    "reward": 0.0013,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 13.13
+   },
+   {
+    "pattern": "tenant_date_report",
+    "reward": 0.2208,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 35.08
+   },
+   {
+    "pattern": "sku_join_tenant",
+    "reward": 0.7477,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:composite:eq+order",
+     "ADD_INDEX:composite:eq+join"
+    ],
+    "planner_cost_reduction_pct": 93.81
+   },
+   {
+    "pattern": "sku_join_tenant",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "correlated_count",
+    "reward": 0.8607,
+    "actions": [
+     "REWRITE_SQL:correlated_count_subquery_to_left_join",
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join"
+    ],
+    "planner_cost_reduction_pct": 99.71
+   },
+   {
+    "pattern": "correlated_count",
+    "reward": 0.8628,
+    "actions": [
+     "REWRITE_SQL:correlated_count_subquery_to_left_join",
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:composite:eq+join"
+    ],
+    "planner_cost_reduction_pct": 99.92
+   },
+   {
+    "pattern": "email_lookup",
+    "reward": 0.9394,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.7
+   },
+   {
+    "pattern": "email_lookup",
+    "reward": 0.9394,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.7
+   },
+   {
+    "pattern": "status_date_count",
+    "reward": 0.8023,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:partial:range|partial"
+    ],
+    "planner_cost_reduction_pct": 86.83
+   },
+   {
+    "pattern": "status_date_count",
+    "reward": 0.835,
+    "actions": [
+     "ADD_INDEX:composite:eq+range",
+     "ADD_INDEX:partial:range|partial"
+    ],
+    "planner_cost_reduction_pct": 90.37
+   },
+   {
+    "pattern": "cast_date_tenant",
+    "reward": 0.9287,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.38
+   },
+   {
+    "pattern": "cast_date_tenant",
+    "reward": 0.9287,
+    "actions": [
+     "REWRITE_SQL:cast_date_equality_to_range",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.37
+   },
+   {
+    "pattern": "sku_aggregate",
+    "reward": 0.932,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 97.96
+   },
+   {
+    "pattern": "sku_aggregate",
+    "reward": 0.932,
+    "actions": [
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 97.96
+   },
+   {
+    "pattern": "tier_join_count",
+    "reward": -0.1352,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:partial:join|partial"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "tier_join_count",
+    "reward": -0.1352,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join",
+     "ADD_INDEX:partial:join|partial"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "point_lookup",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "point_lookup",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "amount_range_top",
+    "reward": 0.9518,
+    "actions": [
+     "ADD_INDEX:single:range"
+    ],
+    "planner_cost_reduction_pct": 98.43
+   },
+   {
+    "pattern": "amount_range_top",
+    "reward": 0.9518,
+    "actions": [
+     "ADD_INDEX:single:range"
+    ],
+    "planner_cost_reduction_pct": 98.43
+   },
+   {
+    "pattern": "complex_multi_join",
+    "reward": 0.7756,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 91.4
+   },
+   {
+    "pattern": "complex_multi_join",
+    "reward": 0.7845,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 92.28
+   },
+   {
+    "pattern": "nested_aggregation",
+    "reward": -0.0778,
+    "actions": [
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "nested_aggregation",
+    "reward": -0.0778,
+    "actions": [
+     "ADD_INDEX:single:join"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "heavy_sorting",
+    "reward": 0.7341,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+order",
+     "ADD_INDEX:covering:eq+eq+order+inc",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.42
+   },
+   {
+    "pattern": "heavy_sorting",
+    "reward": 0.7301,
+    "actions": [
+     "ADD_INDEX:composite:eq+eq+order",
+     "ADD_INDEX:covering:eq+eq+order+inc",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 99.02
+   },
+   {
+    "pattern": "not_in_subquery",
+    "reward": 0.7285,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 86.7
+   },
+   {
+    "pattern": "not_in_subquery",
+    "reward": 0.4494,
+    "actions": [
+     "ADD_INDEX:composite:eq+join",
+     "ADD_INDEX:single:eq",
+     "ADD_INDEX:single:eq"
+    ],
+    "planner_cost_reduction_pct": 58.79
+   },
+   {
+    "pattern": "window_func_query",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   },
+   {
+    "pattern": "window_func_query",
+    "reward": 0.0,
+    "actions": [
+     "NO_CHANGE:none"
+    ],
+    "planner_cost_reduction_pct": 0.0
+   }
+  ]
+ },
+ "states_visited": 60,
+ "note": "Planner-estimated (HypoPG/EXPLAIN) costs on the demo dataset; small-scale demo - not evidence of scientific generalisation."
+}
