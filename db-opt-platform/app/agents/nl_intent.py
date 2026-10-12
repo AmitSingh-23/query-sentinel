@@ -1,4 +1,4 @@
-"""Natural-language DBA assistant (Section 26) + similar-incident retrieval (Addendum R13).
+"""Natural language DBA assistant translating questions into queries with incident retrieval.
 
 Natural-language question -> intent extraction -> candidate query/workload selection ->
 security boundary -> privacy boundary -> optimisation pipeline.

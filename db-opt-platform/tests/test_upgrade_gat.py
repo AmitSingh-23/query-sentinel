@@ -1,4 +1,4 @@
-"""P8 major tests: GATv2 attention, edge features, checkpoint compatibility, fallback, flag."""
+"""Tests for GATv2 model: attention attribution, edge features, checkpoint compatibility, fallback."""
 import os
 
 import pytest

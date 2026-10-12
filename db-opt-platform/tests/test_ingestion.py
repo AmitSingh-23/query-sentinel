@@ -1,4 +1,4 @@
-"""Ingestion engine (Section 16/60): JSON + CSV, privacy sanitisation, fingerprints."""
+"""Tests for ingestion engine: JSON + CSV, privacy sanitisation, fingerprints."""
 import json
 from pathlib import Path
 

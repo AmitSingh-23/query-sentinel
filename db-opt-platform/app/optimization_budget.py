@@ -1,4 +1,4 @@
-"""Optimization budget controller (Addendum R9).
+"""Optimization search budget controller bounding candidate exploration and simulation steps.
 
 Bounds the search: index candidates, HypoPG experiments, agent steps, LLM retries and workload
 queries per optimisation run. When a budget is exhausted a SEARCH_BUDGET_EXHAUSTED event is

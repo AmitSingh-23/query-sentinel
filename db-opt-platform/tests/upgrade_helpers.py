@@ -1,4 +1,4 @@
-"""Shared helpers for the Final Upgrade tests (new file; the pre-existing conftest is not modified)."""
+"""Shared helper fixtures and utilities for test suites."""
 from __future__ import annotations
 
 import asyncio

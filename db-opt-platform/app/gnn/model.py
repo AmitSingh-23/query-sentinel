@@ -1,4 +1,4 @@
-"""GNN bottleneck classifier (Section 20).
+"""Graph Convolutional Network (GCN) bottleneck classifier for execution plans.
 
 GCNConv(F,32) -> ReLU -> GCNConv(32,16) -> ReLU -> global_max_pool -> Linear(16,4)
 (graph readout added so a whole plan gets one class; see DECISIONS D8).

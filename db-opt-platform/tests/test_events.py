@@ -1,4 +1,4 @@
-"""Event bus / SSE (Section 38/60): creation, request isolation, serialisation, redaction."""
+"""Tests for event bus and SSE: creation, request isolation, serialisation, redaction."""
 import json
 
 import pytest

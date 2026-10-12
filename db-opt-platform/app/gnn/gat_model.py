@@ -1,4 +1,4 @@
-"""GATv2 plan-graph model with exposed attention (Final Upgrade P8, behind QS_FEATURE_GATV2).
+"""Graph Attention Network (GATv2) model for execution plan classification with attention attribution.
 
 Uses the installed PyTorch Geometric GATv2Conv (signature read from torch_geometric 2.8:
 GATv2Conv(in, out, heads, concat, negative_slope, dropout, add_self_loops, edge_dim, fill_value, bias,
@@ -126,7 +126,7 @@ def extract_attention(analysis: PlanAnalysis, data: Data, att: list) -> dict[str
             "note": "attention importance and planner cost share are separate fields; they are not combined"}
 
 
-# ------------------------------------------------------------------ checkpoints
+# Checkpoint serialization
 def checkpoint_meta(dataset_id: str, metrics: dict | None = None) -> dict[str, Any]:
     return {"architecture": ARCHITECTURE, "feature_schema_version": FEATURE_SCHEMA_VERSION,
             "edge_feature_version": EDGE_FEATURE_VERSION, "checkpoint_version": CHECKPOINT_VERSION,
@@ -169,7 +169,7 @@ def load_gat_checkpoint(path: str | Path) -> tuple[PlanGATv2, dict[str, Any]]:
     return model, meta
 
 
-# ------------------------------------------------------------------ training (labelled synthetic plans)
+# Training loop
 def train_gat(path: str | Path | None = None, n_per_class: int = 300, epochs: int = 40, seed: int = 1234,
               log=print) -> dict[str, Any]:
     """Trains on the SAME labelled synthetic plan generator as the GCN (app/gnn/training.py); real evaluation

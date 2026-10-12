@@ -1,4 +1,4 @@
-"""Front door from validated NL-generated SQL into the EXISTING QuerySentinel optimizer (Final Upgrade P5).
+"""Routes validated natural-language queries into the QuerySentinel optimization pipeline.
 
 This is not a second optimizer: it binds the existing `Services` to the active data source
 (`Services.for_source`) and runs the existing LangGraph `Pipeline` (security -> privacy -> schema -> EXPLAIN ->
@@ -162,7 +162,7 @@ async def optimize(services, ctx: DataSourceContext, sql: str, main_db=None) -> 
             except Exception:  # noqa: BLE001
                 pass
     from app import feature_flags
-    if feature_flags.enabled("index_portfolio"):          # P7: portfolio reasoning (flag; default off)
+    if feature_flags.enabled("index_portfolio"):          # Portfolio reasoning (when enabled)
         try:
             from app.index_portfolio import analyze_portfolio
             stm = await svc.instr.statements(200)

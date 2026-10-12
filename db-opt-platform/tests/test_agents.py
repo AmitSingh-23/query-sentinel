@@ -1,4 +1,4 @@
-"""LangGraph agents (Section 22-26/60): state transitions, routing, validation, mocked LLM."""
+"""Tests for LangGraph agents: state transitions, routing, validation, and LLM calls."""
 import json
 
 import pytest

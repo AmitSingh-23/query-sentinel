@@ -1,4 +1,4 @@
-"""Deterministic fallback policy (Section 21 FALLBACK). policy_mode = "analytic_fallback".
+"""Deterministic fallback policy ranking index actions when no trained RL weights exist.
 
 Used when no trained policy exists. It ranks the SAME masked action set with transparent
 rules; it is never reported as trained RL inference.

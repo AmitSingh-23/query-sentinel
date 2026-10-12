@@ -1,4 +1,4 @@
-"""DataSource context resolver (Final Upgrade Section 8.1).
+"""Data source context resolver mapping queries and sessions to target schemas.
 
 Turns (data_source_id, session_id) into a validated `DataSourceContext`: kind, connection factory
 (`Database` + `PostgresInstrumentation`), allowed schema / search_path, query role, limits, schema_version,
@@ -83,7 +83,7 @@ class DataSourceResolver:
         self.main_db = main_db
         self._pools: dict[str, Database] = {}
 
-    # ------------------------------------------------------------------ pools
+    # Connection pools
     def dynamic_db(self) -> Database:
         key = f"schema:{self.settings.ingest_target_schema}"
         if key not in self._pools:
@@ -104,7 +104,7 @@ class DataSourceResolver:
             await db.close()
         self._pools.clear()
 
-    # ------------------------------------------------------------------ resolve
+    # Context resolution
     def demo(self) -> DataSourceContext:
         return DataSourceContext(id=DEMO_ID, kind="demo", name="Demo Database", schema_name="public",
                                  db=self.main_db, instr=PostgresInstrumentation(self.main_db),

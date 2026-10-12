@@ -1,4 +1,4 @@
-"""RL (Section 21 + R7/60): state encoding, masking, transitions, reward, Q update, save/load,
+"""Tests for RL agent: state encoding, masking, transitions, reward, Q update, save/load,
 fallback mode, hierarchical selection and workload weighting."""
 import pytest
 

@@ -1,4 +1,4 @@
-"""Index Strategist agent (Section 25 + R3).
+"""Index Strategist agent proposing candidate single, composite, and partial indexes from query evidence.
 
 Works ONLY in pseudonymised identifier space: the masked SQL's access pattern and the
 pseudonymised schema metadata. Generates bounded single / composite / partial / covering

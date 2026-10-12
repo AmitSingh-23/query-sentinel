@@ -1,4 +1,4 @@
-"""P9 major tests: curriculum levels, prioritized replay (with TD-error updates in an episode), held-out split
+"""Tests for RL enhancements: curriculum levels, prioritized replay, held-out evaluation
 by pattern, checkpoint compatibility. The full trainer loop with curriculum+replay is NOT RUN in tests: the
 account-level ml-pipeline hook blocks test files that construct the trainer (see KNOWN_ISSUES K3)."""
 import json

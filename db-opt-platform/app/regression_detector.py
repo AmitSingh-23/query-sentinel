@@ -1,4 +1,4 @@
-"""Plan regression detection (Addendum R2).
+"""Detects execution plan and performance regressions across historical query workloads.
 
 For the same query fingerprint, detects changes in plan shape/fingerprint and in performance
 metrics across time. A plan change is called a PLAN_REGRESSION only when evidence supports it:

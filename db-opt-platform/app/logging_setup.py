@@ -1,4 +1,4 @@
-"""Structured JSON logging (Section 56).
+"""Structured JSON logging with automatic PII, secret, and SQL literal redaction.
 
 Log records carry request_id / query_fingerprint / stage / duration / model mode /
 sandbox status / error category. A redaction filter scrubs quoted literals, emails,

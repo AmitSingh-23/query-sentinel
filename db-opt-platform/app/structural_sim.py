@@ -81,7 +81,7 @@ class StructuralSimulator:
         self.db = db
         self.timeout_ms = timeout_ms
 
-    # ------------------------------------------------------------------ write latency
+    # Write latency simulation
     async def write_latency(self, table: str, new_indexes: list[dict[str, Any]]) -> dict[str, Any]:
         """new_indexes: [{"columns": [...], "include": [...], "where": str|None}] (real names, validated)."""
         out: dict[str, Any] = {"status": "failed", "evidence_kind": "simulated",
@@ -142,7 +142,7 @@ class StructuralSimulator:
                     "treat this as an order-of-magnitude estimate; validate on staging."))
         return out
 
-    # ------------------------------------------------------------------ partitioning
+    # Partitioning simulation
     async def partitioning(self, table: str, key: str, strategy: str) -> dict[str, Any]:
         out: dict[str, Any] = {"status": "failed", "strategy": strategy, "evidence_kind": "simulated"}
         try:

@@ -1,4 +1,4 @@
-"""Execution plan -> PyTorch Geometric graph (Section 19).
+"""Converts PostgreSQL execution plans into PyTorch Geometric graph representations.
 
 Nodes = execution operators, edges = parent/child execution relationships (added in both
 directions so GCN message passing flows up and down the tree). Node features use log1p

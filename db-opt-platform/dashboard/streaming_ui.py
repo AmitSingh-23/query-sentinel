@@ -1,4 +1,4 @@
-"""Backend client + SSE consumer for the Streamlit dashboard (Section 47).
+"""HTTP backend client and Server-Sent Events (SSE) consumer for Streamlit UI.
 
 The dashboard never talks to PostgreSQL directly and never executes SQL; it only calls the
 FastAPI backend. SSE is consumed with httpx streaming and parsed per the text/event-stream

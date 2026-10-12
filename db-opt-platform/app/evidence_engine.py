@@ -1,4 +1,4 @@
-"""Evidence chain engine (Addendum R11, Section 68).
+"""Evidence chain engine linking recommendations directly to observed plan facts.
 
 OBSERVATION -> PLAN/SCHEMA/WORKLOAD EVIDENCE -> GNN/RL/AGENT INTERPRETATION -> RECOMMENDATION
 -> SANDBOX RESULT -> BLAST-RADIUS RESULT -> DEPLOYMENT RISK
@@ -49,7 +49,7 @@ def _classify(step: str, source_type: str, kind: EvidenceKind, data: dict) -> tu
 
 
 def validate_item(item: EvidenceItem | dict) -> None:
-    """Rejects evidence without a provenance tag or an artifact reference (Final Upgrade P11)."""
+    """Validates that evidence entries carry valid provenance tags and artifact references."""
     from app.provenance import ALL_TAGS
     d = item.model_dump() if isinstance(item, EvidenceItem) else item
     if not d.get("provenance") or not all(t in ALL_TAGS for t in d["provenance"]):

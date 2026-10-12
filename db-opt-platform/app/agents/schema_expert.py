@@ -1,4 +1,4 @@
-"""Schema Expert agent (Section 24).
+"""Schema Expert agent analyzing table layouts, key constraints, and index coverage.
 
 Analyses existing indexes, missing access paths, estimated row counts, key relationships,
 statistics freshness, table/index size and partitioning suitability. Returns evidence-backed

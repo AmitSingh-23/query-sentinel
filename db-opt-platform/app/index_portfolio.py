@@ -1,4 +1,4 @@
-"""Index portfolio optimisation (Final Upgrade P7, behind QS_FEATURE_INDEX_PORTFOLIO).
+"""Index portfolio optimizer balancing query workload speedups against maintenance overhead.
 
 Turns "add an index" into evidence-based portfolio reasoning that also weighs write and storage cost.
 Actions: ADD_INDEX, KEEP_INDEX, REPLACE_INDEX_PORTFOLIO, REMOVE_REDUNDANT_INDEX, NO_CHANGE.
@@ -141,7 +141,7 @@ def find_redundancy(indexes: list[IndexInfo], fk_cols: dict[str, list[list[str]]
     return out
 
 
-# ------------------------------------------------------------------ workload coverage
+# Workload coverage
 class _Cols(visitors.Visitor):
     def __init__(self):
         super().__init__()
@@ -196,7 +196,7 @@ def workload_coverage(index: IndexInfo, statements: list[dict]) -> dict[str, Any
             "affected_query_ids": [a for a in affected if a][:10]}
 
 
-# ------------------------------------------------------------------ portfolio
+# Portfolio evaluation
 def _review_ddl(schema: str, ix: IndexInfo | None, add_ddl: str | None = None) -> dict[str, str]:
     from app.recommendation_mapper import quote_ident
     if add_ddl is not None:

@@ -1,4 +1,4 @@
-"""Dynamic dataset ingestion and additive schema evolution (Final Upgrade P2).
+"""Dynamic dataset ingestion with automated schema inference and additive migration.
 
 Pipeline: receive upload (size, extension, SHA-256) -> detect structure -> profile + infer types (full-file
 streaming pass) -> normalise identifiers -> resolve target -> create table or compare with the existing one ->
@@ -70,9 +70,7 @@ WIDENING = {"smallint": ["integer", "bigint", "numeric"], "integer": ["bigint", 
 _PII = PIIDetector()
 
 
-# =====================================================================================================
 # identifiers
-# =====================================================================================================
 def normalize_identifier(raw: str, fallback: str = "col", _part: bool = False) -> str:
     if "__" in str(raw or "") and not _part:      # flattened JSON keys keep their parent__child separator
         parts = [normalize_identifier(x, fallback, True) for x in str(raw).split("__") if x.strip("_ ")]
@@ -110,9 +108,7 @@ def quote_ident(name: str) -> str:
     return '"' + name.replace('"', '""') + '"'
 
 
-# =====================================================================================================
 # structure detection / readers (streaming)
-# =====================================================================================================
 def detect_encoding(path: Path) -> str:
     head = path.open("rb").read(4)
     if head.startswith(codecs.BOM_UTF8):
@@ -230,9 +226,7 @@ def _looks_jsonl(text: str) -> bool:
         return True
 
 
-# =====================================================================================================
 # type inference
-# =====================================================================================================
 @dataclass
 class ColumnProfile:
     original: str
@@ -439,8 +433,6 @@ def convert(value: Any, pg_type: str, null_tokens: set[str], day_first: bool = F
     raise ValueError(pg_type)
 
 
-# =====================================================================================================
-# =====================================================================================================
 @dataclass
 class Analysis:
     filename: str
@@ -613,9 +605,7 @@ def column_stats(c: ColumnProfile, rows: int) -> dict[str, Any]:
     return st
 
 
-# =====================================================================================================
 # commit
-# =====================================================================================================
 @dataclass
 class PreviewEntry:
     preview_id: str

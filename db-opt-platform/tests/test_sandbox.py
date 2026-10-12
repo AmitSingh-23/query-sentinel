@@ -1,4 +1,4 @@
-"""HypoPG sandbox, blast radius and migration generator (Sections 31-34, 50-51, 60)."""
+"""Tests for HypoPG sandbox, blast radius calculation, and migration generator."""
 import pytest
 
 from app.blast_radius import BlastRadiusAnalyzer, classify_risk, parse_write
@@ -52,7 +52,7 @@ async def test_skipped_without_candidates(obfuscator):
     assert res.status == "skipped"
 
 
-# ------------------------------------------------------------------ blast radius
+# Blast radius
 def schema():
     return build_schema_metadata(CATALOG["tables"], CATALOG["columns"], CATALOG["indexes"],
                                  CATALOG["foreign_keys"], CATALOG["primary_keys"])
@@ -87,7 +87,7 @@ def test_risk_classification_bands():
     assert classify_risk(0, 0.0, False, 0.01, 10) == "low"
 
 
-# ------------------------------------------------------------------ migration generator
+# Migration generator
 def test_migration_and_rollback_generation():
     gen = MigrationGenerator()
     dep = gen.generate(request_id="r1", query_fingerprint="abc123",

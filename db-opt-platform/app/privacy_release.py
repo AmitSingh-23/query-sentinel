@@ -1,4 +1,4 @@
-"""Privacy choke point for numeric statistics entering AI prompts (Final Upgrade P4, wrapped by DP in P10).
+"""Privacy release gate for numeric statistics entering AI prompts with differential privacy budgeting.
 
 Every numeric aggregate that goes into an AI-facing payload (row-count estimates, distinct counts, workload
 frequencies) MUST pass through `release_aggregate`. Until differential privacy is enabled (QS_FEATURE_DP) this is

@@ -1,4 +1,4 @@
-"""Audit trail (Section 37). Every optimisation request has a request ID; major steps are
+"""Audit trail engine recording optimization requests and lifecycle stage transitions.
 recorded with safe, anonymised metadata only. Events are kept in memory (bounded) and,
 when a database writer is attached, persisted to optimizer_meta.audit_events."""
 from __future__ import annotations

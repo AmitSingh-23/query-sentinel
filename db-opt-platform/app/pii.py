@@ -1,4 +1,4 @@
-"""PII pre-filter (Section 12) and privacy bitmask encoder (Section 13).
+"""PII and secret detection pre-filter with privacy bitmask encoding.
 
 Detection reports TYPES and COUNTS only - never the matched values. A query containing
 an email or UUID literal is NOT rejected; it is routed through AST parameterisation.
@@ -11,7 +11,7 @@ from enum import IntFlag
 
 from pglast import visitors
 
-# ------------------------------------------------------------------ patterns
+# Detection patterns
 PII_PATTERNS: dict[str, re.Pattern] = {
     "email": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
     "uuid": re.compile(r"\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b"),
@@ -96,7 +96,7 @@ class PIIDetector:
         return res
 
 
-# ------------------------------------------------------------------ bitmask
+# Privacy bitmask
 class PrivacyFlag(IntFlag):
     CONTAINS_EMAIL_LITERAL = 1 << 0
     CONTAINS_UUID_LITERAL = 1 << 1
@@ -163,7 +163,7 @@ class _StructVisitor(visitors.Visitor):
 
 def encode_bitmask(raw_scan: PIIScanResult, parsed_stmt=None, plan_histogram: dict[str, int] | None = None,
                    partition_candidate: bool = False) -> tuple[int, dict[str, bool]]:
-    """Encode sensitive/structural attributes as bit fields (Section 13).
+    """Encode sensitive and structural query attributes as bit fields.
 
     This is an abstraction for downstream models; it is NOT a substitute for literal
     removal, which is performed separately by AST parameterisation.

@@ -1,4 +1,4 @@
-"""Bounded prioritized experience replay for the tabular Q-learner (Final Upgrade P9, QS_FEATURE_RL_UPGRADES).
+"""Prioritized experience replay buffer for tabular Q-learning.
 
 priority p_i = |TD error_i| + eps; sampling P(i) = p_i^alpha / sum_k p_k^alpha, mixed with a uniform fraction
 for diversity; importance-sampling weights w_i = (N * P(i))^-beta / max_j w_j with beta annealed to 1.

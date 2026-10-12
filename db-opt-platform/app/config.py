@@ -56,7 +56,7 @@ class Settings(BaseSettings):
     # DSN of a DISPOSABLE copy of the database with DDL rights (measured mode only)
     benchmark_admin_dsn: SecretStr = SecretStr("")
 
-    # Optimization budget (R9)
+    # Search budget limits
     budget_max_index_candidates: int = Field(8, validation_alias=AliasChoices("budget_max_index_candidates", "max_index_candidates"))
     budget_max_hypopg_experiments: int = Field(10, validation_alias=AliasChoices("budget_max_hypopg_experiments", "max_hypopg_experiments"))
     budget_max_agent_steps: int = Field(20, validation_alias=AliasChoices("budget_max_agent_steps", "max_agent_steps"))
@@ -65,9 +65,7 @@ class Settings(BaseSettings):
 
     drift_js_threshold: float = 0.2
 
-    # ------------------------------------------------------------------ Final upgrade (Section 10)
-    # Feature flags. Additive routes default on; behaviour-changing features default off until
-    # their phase gate passed (see .build_state/DECISIONS.md U-series).
+    # Feature flags for experimental and extended capabilities
     qs_feature_ingestion: bool = True
     qs_feature_nlq: bool = True
     qs_feature_gatv2: bool = False
@@ -107,7 +105,6 @@ class Settings(BaseSettings):
     backend_url: str = "http://localhost:8000"
     log_level: str = "INFO"
 
-    # ------------------------------------------------------------------
     def resolve_path(self, p: str) -> Path:
         path = Path(p)
         return path if path.is_absolute() else PROJECT_ROOT / path

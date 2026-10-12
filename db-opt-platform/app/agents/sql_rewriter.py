@@ -1,4 +1,4 @@
-"""SQL Rewriter / SQL Expert agent (Section 23).
+"""SQL Rewriter agent proposing AST-based optimizations for inefficient query constructs.
 
 Operates on ANONYMISED SQL only (pseudonymised identifiers, $n parameters) and never invents
 tables or columns. Deterministic, AST-based rewrite operators (each one also exposed to the RL
@@ -11,7 +11,7 @@ policy as a REWRITE_SQL low-level action):
 * remove_duplicate_predicates - drops repeated AND conjuncts
 * or_equalities_to_in_list - `c = $1 OR c = $2` -> `c IN ($1, $2)`
 
-Every proposal is checked with the AST semantic diff (R6); unexpected structural changes cause
+Every proposal is checked with the AST semantic diff to ensure equivalence; unexpected structural changes cause
 rejection. An optional LLM proposal goes through the privacy guard, Pydantic validation,
 identifier verification and the same semantic diff.
 """
@@ -62,7 +62,7 @@ class SQLRewriter:
         """`schema`: PSEUDONYMISED metadata (used for column types and identifier checks)."""
         self.schema = schema
 
-    # ------------------------------------------------------------------ helpers
+    # Helper utilities
     def _col_type(self, alias_map: dict[str, str], parts: list[str]) -> str | None:
         if not self.schema:
             return None
@@ -89,7 +89,7 @@ class SQLRewriter:
             walk(it)
         return amap
 
-    # ------------------------------------------------------------------ rules
+    # Rewrite rules
     def _rule_correlated_count(self, stmt: ast.SelectStmt) -> tuple[bool, str]:
         if stmt.groupClause or stmt.distinctClause or stmt.havingClause or len(stmt.fromClause or ()) != 1:
             return False, ""
@@ -253,7 +253,7 @@ class SQLRewriter:
             return True, "removed redundant ORDER BY inside EXISTS subquery"
         return False, ""
 
-    # ------------------------------------------------------------------ public
+    # Public interface
     def candidate_operators(self, masked_sql: str) -> list[RewriteProposal]:
         """Each applicable operator applied ALONE (RL low-level REWRITE_SQL actions)."""
         out = []

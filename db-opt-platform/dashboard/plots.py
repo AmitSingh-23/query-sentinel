@@ -138,7 +138,7 @@ def benchmark_variants(results: list[dict[str, Any]]) -> go.Figure:
 
 def attention_dag(nodes: list[dict[str, Any]], edge_attention: list[dict[str, Any]],
                   importance: list[dict[str, Any]]) -> go.Figure:
-    """Final Upgrade P8: plan DAG with GATv2 attention overlay (edge width = attention, node size = incoming
+    """Plan DAG with GATv2 attention overlay (edge width = attention, node size = incoming
     attention mass). An attention-based structural importance signal - interpretability aid, not causal proof."""
     by_depth: dict[int, list[dict]] = {}
     for n in nodes:

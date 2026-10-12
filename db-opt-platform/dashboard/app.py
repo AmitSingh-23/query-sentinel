@@ -1,4 +1,4 @@
-"""QuerySentinel - Streamlit DBA dashboard (Sections 41-50).
+"""QuerySentinel - Interactive Streamlit DBA dashboard and decision support interface.
 
     streamlit run dashboard/app.py --server.address 0.0.0.0 --server.port 8501
 
@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from dashboard import components as ui  # noqa: E402
 from dashboard import plots  # noqa: E402
 from dashboard.streaming_ui import BackendClient  # noqa: E402
-from dashboard import upgrade_ui as upg  # noqa: E402  (Final Upgrade P13)
+from dashboard import upgrade_ui as upg  # noqa: E402
 
 st.set_page_config(page_title="QuerySentinel - Dashboard", page_icon="🛡️", layout="wide")
 ui.inject_css()
@@ -48,7 +48,7 @@ ss.setdefault("raw_sql", "")
 ss.setdefault("nl", None)
 ss.setdefault("agent_status", {a: "QUEUED" for a in AGENTS})
 
-# ------------------------------------------------------------------ sidebar
+# Sidebar controls
 with st.sidebar:
     ui.brand()
     # visual order: source, scenarios, display, connection (containers keep the original call order below)
@@ -79,7 +79,7 @@ with st.sidebar:
                    "2. Press **Run optimisation pipeline**.\n\n"
                    "3. Read the **Answer** box, then open the detail views.")
 
-# ------------------------------------------------------------------ header + status bar
+# Header & status indicator
 code, status = client.get("/api/v1/status")
 ui.page_header(active_source)
 _data = st.container(border=True, key="qs_glass_data")   # "Your data" panel at the top of the page
@@ -103,7 +103,7 @@ with _res_main:
     _answer_slot = st.container()       # report answer / errors (glass panel only when there is content)
 
 
-# ------------------------------------------------------------------ run helper
+# Pipeline execution helper
 def run_pipeline(start_path: str, body: dict) -> None:
     code, started = client.post(start_path, body)
     if code != 200 or "request_id" not in started:
@@ -146,7 +146,7 @@ def run_pipeline(start_path: str, body: dict) -> None:
     tree_box.empty()     # final authoritative statuses are shown in the LangGraph Agents tab
 
 
-# ------------------------------------------------------------------ Final Upgrade P13: data source + Ask Your Database
+# Data source management & Ask Your Database
 _MAX_MB = int(os.environ.get("INGEST_MAX_UPLOAD_MB", "100"))
 _up_code, _up_status = _api.get("/api/v1/upgrade/status")
 with _data:
@@ -161,7 +161,7 @@ with _data:
         upg.delete_dataset_control(_api, active_source)
         upg.ask_your_database(_api, active_source)
 
-# ------------------------------------------------------------------ inputs
+# User query inputs
 with _work:
     ui.section("Find a slow workload", "Ask in plain English; QuerySentinel ranks existing workload statements and "
                "cites its evidence.")
@@ -202,7 +202,7 @@ with _work:
         elif _target.get("kind", "demo") == "demo":
             run_pipeline("/api/v1/optimize/async", {"sql": ss.raw_sql})
         else:
-            # Final Upgrade: pasted SQL follows the data source that owns its tables; the EXISTING full pipeline runs
+            # Associate query with active data source and run optimization pipeline runs
             # there and its complete report fills the same tabs as the demo flow.
             ss.sql_notes = None
             ss.events = []                      # this path has no live stream; clear the previous run's log
@@ -292,7 +292,7 @@ def tab(name: str):
 
 ok = bool(rep and rep.get("status") == "completed")
 
-# ------------------------------------------------------------------ Privacy
+# Privacy & masking view
 with tab("Privacy Audit"):
     priv = (rep or {}).get("privacy_audit") or {}
     c1, c2 = st.columns(2)
@@ -315,7 +315,7 @@ with tab("Privacy Audit"):
         st.caption("The reverse mapping (pseudonym → real identifier) stays in the backend vault and is never displayed.")
     upg.privacy_upgrade_section(_up_status if _up_code == 200 else None)
 
-# ------------------------------------------------------------------ Plan / GNN
+# Plan & GNN analysis
 with tab("Execution Plan / GNN"):
     ui.explain("""PostgreSQL plans a query as a <b>tree of steps</b> (scan a table, join, sort…). The GNN reads this tree and marks the <b>slowest step in red</b>. <i>Cost</i> is PostgreSQL's own estimate of work - lower is faster.""")
     if ok:
@@ -349,7 +349,7 @@ with tab("Execution Plan / GNN"):
     else:
         st.info("Run the pipeline to see the execution plan.")
 
-# ------------------------------------------------------------------ Agents
+# Agent recommendations
 with tab("LangGraph Agents"):
     ui.explain("""Several small AI helpers work as a team. Each line shows what a helper did: COMPLETED, SKIPPED (not needed) or ERROR.""")
     ui.agent_tree(ss.agent_status)
@@ -365,7 +365,7 @@ with tab("LangGraph Agents"):
                 f"[{(e.get('timestamp') or '')[11:19]}] <b>{e.get('event')}</b> {e.get('message')}"
                 for e in ss.events) + "</div>", unsafe_allow_html=True)
 
-# ------------------------------------------------------------------ Optimization
+# Optimization results
 with tab("Optimization"):
     ui.explain("""The suggested fixes. An <b>index</b> is like a book's index: the database jumps straight to the rows it needs instead of reading the whole table. A <b>rewrite</b> is the same question written in a faster way.""")
     if ok:

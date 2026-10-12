@@ -136,7 +136,7 @@ async def main_async(args) -> int:
     train_stats = trainer.train(train_ctx)
     fb = lambda st, valid: fallback_policy.choose(st, valid)[0]
     metrics = {
-        "algorithm": "hierarchical tabular Q-learning (R7)",
+        "algorithm": "hierarchical tabular Q-learning",
         "hyperparameters": {"alpha": args.alpha, "gamma": args.gamma, "epsilon_decay": args.epsilon_decay,
                             "max_episodes": args.episodes, "max_steps_per_episode": 3},
         "reward": "w_freq*normalized_planner_cost_reduction - storage - write - redundancy - risk (app/rl/environment.py)",

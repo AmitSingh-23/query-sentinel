@@ -1,4 +1,4 @@
-"""Predicate / access-pattern intelligence (Addendum R3).
+"""Extracts predicate and access-pattern intelligence from SQL parse trees.
 
 Derives structural features from (anonymised or real) SQL via the pglast AST:
 WHERE / JOIN / ORDER BY / GROUP BY columns with their operator role, column co-occurrence,
@@ -113,7 +113,7 @@ class PredicateAnalyzer:
         if schema is not None and not self.column_index:
             self.column_index = {t: {c.name for c in m.columns} for t, m in schema.tables.items()}
 
-    # ------------------------------------------------------------------ entry
+    # Entry points
     def analyze(self, sql: str) -> AccessPattern:
         ap = AccessPattern()
         try:
@@ -126,7 +126,7 @@ class PredicateAnalyzer:
         ap.tables = sorted({u.table for u in ap.uses if u.table} | set(ap.tables))
         return ap
 
-    # ------------------------------------------------------------------ statements
+    # Statement analysis
     def _stmt(self, stmt, parent: _Scope | None, ap: AccessPattern, depth: int) -> _Scope:
         scope = _Scope(parent)
         if isinstance(stmt, ast.SelectStmt):
@@ -191,7 +191,7 @@ class PredicateAnalyzer:
             if item.alias is not None:
                 scope.aliases[item.alias.aliasname] = f"derived:{item.alias.aliasname}"
 
-    # ------------------------------------------------------------------ expressions
+    # Expression analysis
     def _resolve(self, cref: ast.ColumnRef, scope: _Scope) -> tuple[str | None, str | None, bool]:
         """-> (table, column, is_outer_reference)"""
         parts = [getattr(f, "sval", None) for f in cref.fields or ()]
@@ -352,7 +352,7 @@ class PredicateAnalyzer:
         self._record_col(cref, scope, ap, role, depth, in_or=in_or, param=param)
 
 
-# ---------------------------------------------------------------------- workload aggregation
+# Workload aggregation
 def aggregate_workload(patterns: Iterable[tuple[AccessPattern, float]]) -> dict[str, Any]:
     """Weighted predicate frequency over a workload: [(pattern, weight=calls)]."""
     freq: Counter = Counter()

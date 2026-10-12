@@ -1,4 +1,4 @@
-"""LangGraph state (Section 22). Everything in the state is anonymised / sanitised; trusted-only
+"""LangGraph state schema for multi-agent pipeline orchestration. Trusted-only
 data (raw SQL, real schema, real DDL) is held in `Services.trusted[request_id]`, never in state."""
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ def merge_dicts(a: dict | None, b: dict | None) -> dict:
 
 
 class QSState(TypedDict, total=False):
-    # --- Section 22 required keys
+    # Pipeline state keys
     request_id: str
     masked_sql: str
     gnn_diagnosis: dict

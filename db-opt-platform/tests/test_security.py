@@ -1,4 +1,4 @@
-"""Security gateway (Section 11/60): statement rules, DDL/dangerous rejection, length limit."""
+"""Tests for security gateway: statement rules, DDL/dangerous rejection, length limit."""
 import pytest
 
 from app.errors import ErrorCategory, SecurityRejection

@@ -1,4 +1,4 @@
-"""Environment-configurable LLM client (Sections 27-28).
+"""Configurable LLM client with structured output extraction and deterministic fallbacks.
 
 Providers: none (default, deterministic agents only) | gemini | openai (any OpenAI-compatible
 endpoint) | mock (tests). Every call:
@@ -107,7 +107,7 @@ class LLMClient:
         return {"provider": self.provider, "model": self.model, "enabled": self.enabled,
                 "api_key_configured": bool(self.settings.llm_api_key.get_secret_value())}
 
-    # -------------------------------------------------------------- transport
+    # HTTP transport
     def _send(self, template: str, data: dict[str, Any]) -> str:
         prompt = template + json.dumps(data, sort_keys=True)
         if self.provider == "mock":
@@ -139,7 +139,7 @@ class LLMClient:
             resp.raise_for_status()
             return resp.json()["choices"][0]["message"]["content"]
 
-    # -------------------------------------------------------------- public
+    # Public API
     def recommend(self, request_id: str, task: str, data: dict[str, Any],
                   max_retries: int | None = None) -> LLMCallResult:
         result = LLMCallResult(provider=self.provider, model=self.model, success=False)
@@ -179,7 +179,7 @@ class LLMClient:
         result.latency_ms = round((time.perf_counter() - t0) * 1000, 1)
         return result
 
-    # -------------------------------------------------------------- Final Upgrade P4 (additive)
+    # Schema context extraction
     def complete_json(self, template: str, data: dict[str, Any]) -> dict[str, Any]:
         """Raw JSON completion for the NL-to-SQL generator (its own privacy rules are applied by the caller:
         schema metadata only, no row values, PII-free question). Raises QuerySentinelError on failure."""

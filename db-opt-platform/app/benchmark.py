@@ -1,4 +1,4 @@
-"""Optimization efficacy benchmarking + ablation lab (Section 36, 61 and Addendum R12).
+"""Optimization benchmarking and ablation experiments.
 
 Two clearly separated metrics - never converted into one another:
 * planner_cost_reduction_pct        - EXPLAIN / HypoPG planner ESTIMATE (always available)
@@ -46,7 +46,7 @@ class BenchmarkRunner:
         self.rl = rl
         self.settings = get_settings()
 
-    # ------------------------------------------------------------------ planner-estimate experiments
+    # Planner estimate experiments
     async def _cost(self, conn, sql: str, ddls: list[str]) -> tuple[float, str, list[str]]:
         await conn.execute("SELECT hypopg_reset()")
         names = {}
@@ -162,7 +162,7 @@ class BenchmarkRunner:
                       "and cache state.",
         }
 
-    # ------------------------------------------------------------------ measured mode (opt-in, disposable DB)
+    # Measured execution mode (opt-in, disposable DB)
     async def _measure(self, p: Prepared, results: list[dict]) -> dict[str, Any]:
         s = self.settings
         dsn = s.benchmark_admin_dsn.get_secret_value()

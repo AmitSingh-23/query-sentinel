@@ -1,4 +1,4 @@
-"""Recommendation translation (Section 29) and validation (Section 30).
+"""Translates pseudonymized agent recommendations back to verified database identifiers.
 
 LLM/agent output   : CREATE INDEX ON tbl_a31f7c (col_c81d44, col_91ab23)
 private mapping    : tbl_a31f7c -> orders, col_c81d44 -> tenant_id, col_91ab23 -> order_date
@@ -63,7 +63,7 @@ class RecommendationValidator:
     def __init__(self, obfuscator: DataObfuscator, real_schema: SchemaMetadata, schema_name: str = "public"):
         self.obf = obfuscator
         self.schema = real_schema
-        self.schema_name = schema_name        # Final Upgrade P5: target schema of the active data source
+        self.schema_name = schema_name        # Target schema of the active data source
 
     def validate(self, cand: IndexCandidate, request_id: str) -> ValidationOutcome:
         errors: list[str] = []

@@ -1,4 +1,4 @@
-"""Curriculum levels from the real structure of parsed workload queries (Final Upgrade P9).
+"""Curriculum learning levels categorizing query workloads by structural complexity.
 
 Level 1 single-table filtering | 2 multi-predicate filtering | 3 single join | 4 multi-table joins |
 5 join + aggregation + sorting | 6 complex evolving workload (level-5 shape with a drift flag or >= 4 tables).

@@ -1,4 +1,4 @@
-"""Feature flags for the Final Upgrade (Section 10). Read from Settings; reported by /api/v1/upgrade/status."""
+"""Runtime feature flags loaded from application settings and reported by /api/v1/upgrade/status."""
 from __future__ import annotations
 
 from typing import Any

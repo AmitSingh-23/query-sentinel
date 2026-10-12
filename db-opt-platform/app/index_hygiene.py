@@ -1,4 +1,4 @@
-"""Index hygiene (Addendum R4) - a SUPPORTING capability.
+"""Index hygiene analyzer detecting duplicate, overlapping, and unused indexes.
 
 Detects, when the evidence permits: missing index candidates (FKs without a supporting index),
 duplicate/redundant indexes (identical or left-prefix-covered btree definitions) and unused-index

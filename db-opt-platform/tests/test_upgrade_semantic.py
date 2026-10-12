@@ -1,4 +1,4 @@
-"""P6 major tests: semantic-risk screening of rewrites."""
+"""Tests for semantic risk screening and structural equivalence of SQL rewrites."""
 from app.agents.sql_rewriter import SQLRewriter
 from app.sql_semantic_diff import risk_screen
 

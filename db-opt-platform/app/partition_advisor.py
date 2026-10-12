@@ -1,4 +1,4 @@
-"""Partitioning / sharding advisory layer (Sections 32 and 54).
+"""Partitioning and sharding advisory engine evaluating table volume and access patterns.
 
 Evidence used: table size, date-range access patterns, equality access on a tenant-like key,
 distribution skew (pg_stats most_common_freqs[1] - a frequency, never a value), cardinality,

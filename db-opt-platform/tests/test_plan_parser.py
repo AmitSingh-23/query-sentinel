@@ -1,4 +1,4 @@
-"""EXPLAIN JSON parsing (Section 18/60) incl. nested plans, cost attribution and sanitisation."""
+"""Tests for EXPLAIN JSON parsing: nested plans, cost attribution and sanitisation."""
 from app.plan_parser import parse_explain, plan_shape, sanitize_expression, sanitize_plan
 
 from tests.conftest import PLANS

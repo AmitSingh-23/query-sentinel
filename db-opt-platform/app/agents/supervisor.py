@@ -1,4 +1,4 @@
-"""LangGraph multi-agent supervisor (Section 22) - a REAL stateful graph that executes the full
+"""LangGraph supervisor orchestrating the end-to-end query optimization pipeline:
 optimisation pipeline:
 
 START -> security_validation -> privacy_masking -> schema_inspection -> explain -> plan_to_graph
@@ -73,7 +73,7 @@ class Pipeline:
         self.s = services
         self.graph = self._build()
 
-    # ================================================================== helpers
+    # Helper functions
     def emit(self, rid: str, event: str, stage: str, message: str, **data) -> None:
         self.s.events.publish(rid, event, stage, message, data)
 
@@ -122,7 +122,7 @@ class Pipeline:
             return wrapper
         return deco
 
-    # ================================================================== graph
+    # Graph definition
     def _build(self):
         g = StateGraph(QSState)
         g.add_node("security_validation", self.node("security_validation")(self.n_security))
@@ -160,7 +160,7 @@ class Pipeline:
         g.add_edge("final_report", END)
         return g.compile()
 
-    # ---------------------------------------------------------------- routers
+    # Conditional routers
     @staticmethod
     def r_ok(nxt: str):
         def route(state: QSState) -> str:
@@ -185,7 +185,7 @@ class Pipeline:
         sb = state.get("sandbox_results") or {}
         return "blast_radius" if (not state.get("error") and sb.get("virtual_indexes_used")) else "final_report"
 
-    # ================================================================== nodes
+    # Pipeline stage nodes
     async def n_security(self, state: QSState) -> dict:
         rid = state["request_id"]
         tr = self.t(rid)
@@ -331,7 +331,7 @@ class Pipeline:
         safe = self.t(state["request_id"])["plan_safe"]
         schema = state.get("schema_stats")
         from app import feature_flags
-        if feature_flags.enabled("dp"):           # Final Upgrade P10: AI-facing numeric aggregates only
+        if feature_flags.enabled("dp"):           # Apply differential privacy to aggregates if enabled
             from app.dp import protect_schema_payload
             scope = self.t(state["request_id"]).get("dp_scope") or "global"
             schema, dp_rep = protect_schema_payload(schema, scope)
@@ -424,7 +424,7 @@ class Pipeline:
         sql_a = state.get("sql_agent") or {}
         sch = state.get("schema_agent") or {}
         rewrite = sql_a.get("proposal") or sql_a.get("llm_proposal")
-        # Final Upgrade P6: a rewrite that screens HIGH semantic risk is never applied or simulated
+        # Discard rewrites that exhibit high semantic deviation risk
         blocked = bool(rewrite and ((rewrite.get("semantic_diff") or {}).get("risk_screening") or {}).get("blocked"))
         rec = AgentRecommendation(
             rewritten_sql=rewrite["rewritten_masked_sql"] if rewrite and not blocked else None,
@@ -782,7 +782,7 @@ class Pipeline:
                               "replaced by HMAC hashes, and the outgoing AI payload passed the leak check."
                               if not leaked else "Raw-data leak check FAILED - payload blocked, nothing sent to AI.")}
 
-    # ================================================================== run
+    # Pipeline execution
     async def run(self, request_id: str, raw_sql: str) -> dict[str, Any]:
         self.s.events.ensure(request_id)
         budget = OptimizationBudget.from_settings(
@@ -820,7 +820,7 @@ class Pipeline:
 
 
 def _evidence_explanation(state: QSState, sb: dict, blast: list[dict]) -> dict[str, Any]:
-    """Section 68 format: observation -> evidence -> recommendation -> validation -> impact -> uncertainty."""
+    """Structured evidence record: observation -> evidence -> recommendation -> validation -> impact -> uncertainty."""
     plan = state.get("plan_analysis") or {}
     hc = plan.get("highest_cost_node") or {}
     rec = state.get("agent_recommendation") or {}
@@ -898,7 +898,7 @@ def _headline(state: QSState, sb: dict, part: dict | None, proof: dict) -> dict:
 
 
 def build_response(final: QSState) -> dict[str, Any]:
-    """Section 39 response contract (+ dashboard fields)."""
+    """Formats pipeline execution results into final API and dashboard response payload."""
     if final.get("error"):
         return {"request_id": final["request_id"], "status": "rejected" if final["error"].get("error") in
                 ("unsafe_sql", "invalid_sql", "quarantined") else "error",

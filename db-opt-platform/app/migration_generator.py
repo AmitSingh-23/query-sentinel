@@ -1,4 +1,4 @@
-"""Staging migration + rollback generator (Sections 50-51) and the human approval boundary (4.2).
+"""Staging migration and rollback script generator with explicit human approval checkpoints.
 
 Generates `CREATE INDEX CONCURRENTLY` migrations and `DROP INDEX CONCURRENTLY` rollbacks with
 deterministic index naming, safe identifier quoting, comments, source query fingerprint,

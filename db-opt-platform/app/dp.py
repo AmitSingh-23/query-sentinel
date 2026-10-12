@@ -1,4 +1,4 @@
-"""Differential privacy for AI-facing numeric aggregates (Final Upgrade P10, QS_FEATURE_DP).
+"""Differential privacy mechanism (Laplace noise) for AI-facing numeric aggregates.
 
 Mechanism: Laplace, M(D) = clip(f(D), lower, upper) + Laplace(0, sensitivity / epsilon), then post-processing
 (rounding, clamp >= lower) which does not weaken the guarantee.
