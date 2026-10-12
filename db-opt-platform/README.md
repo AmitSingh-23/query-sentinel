@@ -1,6 +1,6 @@
 # QuerySentinel
 
-**Privacy-Aware AI-Assisted PostgreSQL Performance Optimization & DBA Intelligence Platform**
+## Privacy-Aware AI-Assisted PostgreSQL Performance Optimization & DBA Intelligence Platform
 
 Code Utsava X.0 · NIT Raipur · Author: **Amit Singh Bisht**
 
@@ -76,7 +76,7 @@ It then answers six questions with evidence:
 
 ## 3. Architecture and end-to-end flow
 
-```
+```text
 USER / DBA ──► slow SQL │ NL question │ historical logs │ historical plans
                  │
                  ▼
@@ -106,7 +106,7 @@ Detailed component, sequence and state-transition documentation is in
 
 ### Repository structure
 
-```
+```text
 db-opt-platform/
 ├── .env.example  .gitignore  Dockerfile  docker-compose.yml  requirements.txt  pytest.ini  README.md
 ├── .streamlit/config.toml dark theme
@@ -134,7 +134,7 @@ db-opt-platform/
 ## 4. Problem Statement Traceability Matrix
 
 | PS requirement | Implementation module(s) | Evidence / demo | Limitation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Database optimisation | `agents/index_strategist.py`, `agents/sql_rewriter.py`, `sandbox.py` | Scenario C: HypoPG planner cost 319,578,254 → 49,745 | Planner estimates, not runtime |
 | Artificial intelligence | `agents/supervisor.py` (LangGraph), `llm.py` | 9-node graph executes for every request | LLM optional; deterministic agents by default |
 | Data privacy | `masking_vault.py`, `pii.py`, `llm_guard.py` | Tests: no literal / PII / real identifier reaches the LLM payload | Regex PII detection is not exhaustive |
@@ -340,7 +340,7 @@ scripts, and production tables are never partitioned automatically.
 ## 14. API and SSE documentation
 
 | Method | Path | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | GET | `/api/v1/health` | DB / HypoPG / pg_stat_statements health |
 | GET | `/api/v1/status` | Dashboard status bar (all components + model modes) |
 | POST | `/api/v1/mask` | Anonymise SQL (reverse map never returned) |
@@ -395,7 +395,7 @@ mode, the RL mode and LangGraph.
 3. Explore the tabs. **Demo mode** (sidebar toggle, ON by default) shows only the 5 core tabs: Privacy Audit, Execution Plan / GNN, Optimization, HypoPG, Deployment Review. Turn it OFF to see all tabs.
 
 | Tab | What it shows |
-|---|---|
+| --- | --- |
 | **Privacy Audit** | Raw SQL (INTERNAL / SENSITIVE) vs anonymised SQL (SAFE FOR MODEL INGESTION), PII, literal count, fingerprint, pseudonym count, fallback status, payload check, bitmask |
 | **Execution Plan / GNN** | Plan DAG with the bottleneck in red, operator cost chart, class probabilities or the fallback label, evidence, plan tree |
 | **LangGraph Agents** | Supervisor tree with QUEUED / RUNNING / COMPLETED / SKIPPED / REJECTED / ERROR, the agent log, and the live SSE event stream (expander) |
@@ -448,7 +448,7 @@ BACKEND_URL=http://localhost:8000 streamlit run dashboard/app.py --server.port 8
 All variables are documented in [`.env.example`](.env.example).
 
 | Variable | Default | Meaning |
-|---|---|---|
+| --- | --- | --- |
 | `POSTGRES_HOST/PORT/DB/USER/PASSWORD` | `db/5432/querysentinel/postgres/–` | Superuser; used only by the db container and seed scripts |
 | `QS_APP_USER/QS_APP_PASSWORD` | `qs_app/–` | Least-privilege application role |
 | `PRIVACY_HMAC_KEY` | random per process | HMAC key for pseudonyms; set it for stable pseudonyms |
@@ -457,14 +457,14 @@ All variables are documented in [`.env.example`](.env.example).
 | `LLM_PROVIDER/LLM_MODEL/LLM_API_KEY/LLM_BASE_URL` | `none` | `none`, `gemini`, `openai` (any OpenAI-compatible endpoint) or `mock` |
 | `GNN_CHECKPOINT_PATH`, `RL_POLICY_PATH` | `models/...` | Model artefacts |
 | `BENCHMARK_ENABLED`, `BENCHMARK_ADMIN_DSN`, `BENCHMARK_REPETITIONS` | `false`, –, 3 | Measured mode (disposable DB only) |
-| `BUDGET_MAX_*` | 8/10/20/2/50 | Optimisation budget (R9) |
-| `DRIFT_JS_THRESHOLD` | 0.2 | Workload drift threshold (R8) |
+| `BUDGET_MAX_*` | 8/10/20/2/50 | Optimisation search budget limits |
+| `DRIFT_JS_THRESHOLD` | 0.2 | Workload drift detection threshold |
 | `SEED_TENANTS/SEED_ORDERS/SEED_ORDER_ITEMS/SEED_RANDOM_SEED` | 100/100000/300000/42 | Seed size |
 
 ## 18. Seed data: lightweight vs full mode
 
 | Mode | Command | Size | Time in the build environment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Lightweight (default) | `python scripts/seed_data.py` | 100 tenants · 100,000 orders · 300,000 items | ~7 s |
 | Full demonstration | `python scripts/seed_data.py --full` | 100 · 1,000,000 · 3,000,000 | 68 s (measured) |
 
@@ -563,7 +563,7 @@ These come from PostgreSQL 16.15 with HypoPG 1.4.0, on the full dataset (1M orde
 CPU only. They are planner estimates unless marked *measured*.
 
 | Scenario | Diagnosis | Recommendation | Planner cost (HypoPG) | Measured (opt-in) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | A join | Seq Scan on `order_items` | `order_items(product_sku)` + `orders(tenant_id, order_date)` | 65,628 → 17,859 (−72.8 %) | — |
 | B weekly report | Bitmap heap scan with tenant filter | `orders(tenant_id, order_date)` | 23,103 → 18,177 (−21.3 %) | 57.3 ms → 30.0 ms median (−47.6 %) |
 | C correlated subquery | Inner Seq Scan ×~4,668 | FK index `order_items(order_id)`; LEFT JOIN rewrite | 319,578,255 → 49,745 (−99.98 %) | not run (baseline too slow for the sandbox) |
@@ -640,7 +640,7 @@ workload records). It should not become a core feature until the official PS con
 Two data sources, picked in the sidebar ("Data source"):
 
 | Source | Where the data lives | Lifetime |
-|---|---|---|
+| --- | --- | --- |
 | **Demo Database** | the existing `public` schema (never modified) | permanent |
 | **Upload Dataset (CSV, JSON)** | main PostgreSQL, schema `qs_dynamic`, table named after the dataset (e.g. `shop`) | until deleted |
 
@@ -664,13 +664,9 @@ ANALYTIC FALLBACK, TRAINED GNN, RL POLICY, LLM RECOMMENDATION, HEURISTIC ESTIMAT
 Optional features (environment flags, default off): `QS_FEATURE_GATV2` (GATv2 attention overlay on the plan
 graph), `QS_FEATURE_INDEX_PORTFOLIO` (duplicate/redundant/unused index review), `QS_FEATURE_DP` (Laplace noise on
 numeric aggregates sent to AI, with an epsilon budget), `QS_FEATURE_RL_UPGRADES` (curriculum + prioritized replay
-options for RL training). All variables are listed in `.env.example`; API contracts in
-`.build_state/API_CONTRACTS.md`; the full upgrade record in `.build_state/FINAL_REPORT.md`.
+options for RL training). All variables are listed in `.env.example`; API contracts in `docs/api.md`.
 
 Honest limits: the session id is
 ownership, not authentication; NL-to-SQL correctness depends on the generator while the validator only guarantees
 safety; type inference is heuristic; index advice is planner-estimate based; GATv2 and RL are trained on synthetic
 labels; DP covers only the specific aggregate releases under the stated assumptions.
-#   c o d e c W e 
- 
- 
