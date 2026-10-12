@@ -87,7 +87,7 @@ def _distract(rng, plan: dict, max_share: float = 0.12) -> dict:
     return _node("Gather", 1000.0, tc + extra, plan["Plan Rows"], Plans=[_outer(plan)])
 
 
-# --------------------------------------------------------------------------- scenario templates
+# Scenario templates
 def gen_seq_scan(rng, variant: str) -> dict:
     """class 0 - unindexed sequential scan dominates."""
     n = 10 ** rng.uniform(5, 7.3)

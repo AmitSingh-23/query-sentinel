@@ -1,4 +1,4 @@
-"""P7 major tests: index portfolio reasoning."""
+"""Tests for index portfolio reasoning and candidate evaluation."""
 from app.index_portfolio import IndexInfo, find_redundancy, plan_actions, workload_coverage
 
 OPC = "{1978}"

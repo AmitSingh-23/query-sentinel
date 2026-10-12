@@ -1,5 +1,5 @@
-"""GNN (Sections 19-20/60): graph nodes/edges, tensor shapes, forward pass, fallback mode,
-checkpoint validation."""
+"""Tests for GNN pipeline: graph nodes/edges, tensor shapes, forward pass, fallback mode,
+and checkpoint validation."""
 import torch
 
 from app.contracts import BOTTLENECK_CLASSES

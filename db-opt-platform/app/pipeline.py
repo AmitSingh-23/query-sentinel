@@ -1,4 +1,4 @@
-"""Service container shared by the API, the LangGraph supervisor and the dashboard status bar.
+"""Dependency injection container holding shared database pools, vaults, models, and stores.
 
 Holds long-lived components (DB pool, vault, guard, models, event bus, audit trail, workload
 store) plus a per-request TRUSTED store for data that must never enter the graph state or an
@@ -58,13 +58,13 @@ class Services:
         self.reports: dict[str, dict[str, Any]] = {}
         self.known_tables: set[str] = set()
         from app.dp import (
-            accountant as _dp_acc,  # Final Upgrade P10: PRIVACY_BUDGET_EXHAUSTED audit
+            accountant as _dp_acc,  # Differential privacy budget accountant
         )
         if _dp_acc.audit_hook is None:
             _dp_acc.audit_hook = lambda scope, snap: self.audit.record(
                 f"dp-{scope}"[:64], "PRIVACY_BUDGET_EXHAUSTED", stage="dp", details=snap)
 
-    # ------------------------------------------------------------------ Final Upgrade P5
+    # Data source scoped services
     def for_source(self, ctx) -> Services:
         """Services bound to one data source (demo returns self, so the demo path is untouched). Shares the
         vault backend, models, audit, events and reports; swaps db/instr, workload namespace and target schema."""
@@ -84,7 +84,7 @@ class Services:
         clone.obfuscator.known_tables = set(clone.known_tables)
         return clone
 
-    # ------------------------------------------------------------------ lifecycle
+    # Lifecycle management
     async def startup(self) -> None:
         ok = await self.db.connect()
         if ok:

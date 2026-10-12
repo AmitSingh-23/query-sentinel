@@ -275,7 +275,7 @@ def inject_css() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
 
 
-# ------------------------------------------------------------------ V3 layout helpers (display only)
+# Layout helpers
 def brand() -> None:
     st.markdown('<div class="qs-brand"><div class="mark" aria-hidden="true">QS</div>'
                 '<div class="name">QuerySentinel</div></div>'
@@ -378,7 +378,7 @@ def capability_panel(status: dict | None, error: str | None = None) -> None:
                 'LLM disabled is normal: everything runs locally.</div></div>', unsafe_allow_html=True)
 
 
-# ------------------------------------------------------------------ existing helpers (restyled)
+# UI components
 def chip(label: str, state: str, detail: str = "") -> str:
     cls = {"ok": "qs-ok", "bad": "qs-bad", "warn": "qs-warn"}[state]
     tip = f' title="{html.escape(detail)}"' if detail else ""
@@ -386,7 +386,7 @@ def chip(label: str, state: str, detail: str = "") -> str:
 
 
 def status_bar(status: dict | None, error: str | None = None) -> None:
-    """Top status bar from REAL backend responses (Section 42) - no fake indicators."""
+    """Renders live system health, connection status, and model states."""
     if status is None:
         st.markdown(chip(f"Backend unreachable: {error or ''}", "bad"), unsafe_allow_html=True)
         return

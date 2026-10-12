@@ -1,4 +1,4 @@
-"""P4 SQL safety layer + schema-aware NL-to-SQL (real PostgreSQL; only the LLM is faked)."""
+"""Tests for SQL safety layer and schema-aware natural language to SQL generation."""
 from __future__ import annotations
 
 import json
@@ -88,7 +88,7 @@ def test_valid_analytics_pass_static(sql):
     SQLSafetyGate(_ctx(), SNAP).check_static(sql)
 
 
-# ----------------------------------------------------------------------------- live
+# Live database tests
 @pytest.fixture
 async def demo_ctx():
     from tests.upgrade_helpers import admin_db_available

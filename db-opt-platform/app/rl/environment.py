@@ -1,4 +1,4 @@
-"""RL environment: state -> action -> sandbox evaluation -> next state + reward (Section 21, R7).
+"""Reinforcement learning environment evaluating index actions against simulated execution costs.
 
 Hierarchical action space
   HIGH: ADD_INDEX | REWRITE_SQL | PARTITION | SHARD_ADVISORY | NO_CHANGE
@@ -6,11 +6,11 @@ Hierarchical action space
         REWRITE_SQL    -> a safe rewrite operator exposed by the SQL rewriter
         PARTITION      -> a validated range/hash partition advisory
         SHARD_ADVISORY -> a shard-key advisory
-Invalid-action masking (R7): candidates come only from anonymised schema/workload evidence;
+Invalid-action masking: restricts action space to candidates supported by schema evidence;
 nonexistent identifiers, duplicate/redundant indexes and safety-policy violations are removed
 BEFORE the policy sees the action set.
 
-Reward (documented formulation, R7):
+Reward formulation:
   reward = w_freq * normalized_planner_cost_reduction
            - storage_penalty - write_penalty - redundancy_penalty - risk_penalty
   normalized_planner_cost_reduction = (cost_before_step - cost_after_step) / baseline_cost

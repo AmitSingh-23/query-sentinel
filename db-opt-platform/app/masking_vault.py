@@ -1,4 +1,4 @@
-"""Privacy vault and SQL obfuscation (Sections 12-15).
+"""Privacy vault and SQL obfuscation engine parameterizing literals and pseudonymizing identifiers.
 
 Literal behaviour   : 'amit@example.com' -> $1, 5000 -> $2, '2026-10-01' -> $3   (pglast AST)
 Identifier behaviour: orders -> tbl_a31f7c, tenant_id -> col_c81d44            (HMAC-SHA256)
@@ -36,7 +36,7 @@ PREFIX = {"table": "tbl", "column": "col", "alias": "als", "schema": "sch", "ind
 UNMASKED_SCHEMAS = {"pg_catalog", "information_schema"}
 
 
-# =========================================================================== vault backends
+# Vault storage backends
 class VaultBackend(Protocol):
     def put(self, request_id: str, data: dict) -> None: ...
     def get(self, request_id: str) -> dict | None: ...
@@ -122,7 +122,7 @@ def build_vault_backend() -> VaultBackend:
     return SQLiteVaultBackend(s.vault_ttl_seconds)
 
 
-# =========================================================================== pseudonymizer
+# Pseudonymization helpersr
 class Pseudonymizer:
     def __init__(self, key: bytes):
         self._key = key
@@ -285,7 +285,7 @@ class _IdentifierRewriter(visitors.Visitor):
             node.idxname = self.resolve(node.idxname, "index")
 
 
-# =========================================================================== obfuscator
+# Query obfuscator
 class DataObfuscator:
     def __init__(self, backend: VaultBackend | None = None, hmac_key: bytes | None = None,
                  known_tables: Iterable[str] | None = None):
@@ -294,7 +294,7 @@ class DataObfuscator:
         self.detector = PIIDetector()
         self.known_tables = set(known_tables or ())
 
-    # ------------------------------------------------------------- vault helpers
+    # Vault helpers
     def _load(self, request_id: str) -> RequestVault:
         data = self.backend.get(request_id)
         return RequestVault.from_dict(data) if data else RequestVault(request_id=request_id)
@@ -335,7 +335,7 @@ class DataObfuscator:
         self._save(vault)
         return out
 
-    # ------------------------------------------------------------- mask
+    # Query masking
     def mask_sql(self, raw_sql: str, request_id: str) -> dict:
         scan = self.detector.scan(raw_sql)
         vault = self._load(request_id)

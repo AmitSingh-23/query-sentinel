@@ -1,4 +1,4 @@
-"""Hierarchical tabular Q-learning agent (Section 21 RL ALGORITHM, Addendum R7).
+"""Hierarchical tabular Q-learning agent for query optimization actions.
 
 State representation : discretised RLState.key() (anonymised structural features)
 Action representation: Q_high[state][HIGH] and Q_low[state|HIGH][signature]
@@ -47,7 +47,7 @@ class QLearningAgent:
         self.marginal_low: dict[str, list[float]] = defaultdict(lambda: [0.0, 0])
         self.meta: dict[str, Any] = {}
 
-    # ------------------------------------------------------------------ value lookup
+    # Q-value lookup
     def high_values(self, state: RLState, valid: list[str]) -> tuple[dict[str, float], str]:
         k = state.key()
         if self.visits.get(k):
@@ -68,7 +68,7 @@ class QLearningAgent:
         return {s: (self.marginal_low[f"{high}#{s}"][0] / self.marginal_low[f"{high}#{s}"][1])
                 if self.marginal_low[f"{high}#{s}"][1] else 0.0 for s in sigs}
 
-    # ------------------------------------------------------------------ acting
+    # Action selection
     def select(self, state: RLState, valid: dict[str, list[LowAction]], explore: bool) -> tuple[LowAction, dict[str, Any]]:
         highs = list(valid)
         hv, source = self.high_values(state, highs)
@@ -85,11 +85,11 @@ class QLearningAgent:
             low = max(lows, key=lambda a: (lv.get(a.signature, 0.0), -lows.index(a)))
         return low, {"q_high": hv, "q_low": lv, "value_source": source}
 
-    # ------------------------------------------------------------------ learning
+    # Learning updates
     def update(self, s: RLState, action: LowAction, reward: float, s_next: RLState,
                next_valid: list[str], done: bool, weight: float = 1.0) -> float:
-        """Q-learning update. Returns the TD error of the high-level Q value (Final Upgrade P9: used as replay
-        priority). `weight` = importance-sampling weight for prioritized replay (1.0 = original behaviour)."""
+        """Q-learning update. Returns the TD error of the high-level Q value (used as replay
+        priority). `weight` = importance-sampling weight for prioritized replay."""
         k, ck = s.key(), s.coarse_key()
         td_error = 0.0
         self.visits[k] += 1
@@ -119,7 +119,7 @@ class QLearningAgent:
     def decay(self) -> None:
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
 
-    # ------------------------------------------------------------------ persistence
+    # Model persistence
     def save_policy(self, path: str | Path, meta: dict[str, Any] | None = None) -> None:
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -165,7 +165,7 @@ class QLearningAgent:
         for k, v in data.get("marginal_low", {}).items():
             agent.marginal_low[k] = [float(v[0]), int(v[1])]
         agent.meta = data.get("meta", {})
-        # Final Upgrade P9: never load a policy whose action schema / state encoding differs from this code
+        # Verify schema compatibility before restoring saved policy weights
         stored_actions = data.get("high_actions")
         if stored_actions is not None and list(stored_actions) != list(HIGH_ACTIONS):
             raise QuerySentinelError(ErrorCategory.CORRUPT_CHECKPOINT, "RL policy action schema incompatible",

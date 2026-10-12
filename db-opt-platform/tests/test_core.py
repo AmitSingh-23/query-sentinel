@@ -1,4 +1,4 @@
-"""Core infrastructure: config, errors, logging redaction, audit, budget (R9), firewall (R10),
+"""Core infrastructure tests: config, errors, logging redaction, audit, budget, firewall,
 schema inspector, workload store."""
 import json
 import logging

@@ -109,7 +109,6 @@ Detailed component, sequence and state-transition documentation is in
 ```
 db-opt-platform/
 ├── .env.example  .gitignore  Dockerfile  docker-compose.yml  requirements.txt  pytest.ini  README.md
-├── .build_state/          MASTER_STATE.md FILE_MANIFEST.json CONTRACTS.md TRACEABILITY.md DECISIONS.md VERIFY.md
 ├── .streamlit/config.toml dark theme
 ├── docker/db/             PostgreSQL 16 + HypoPG image, app-role init script
 ├── docs/                  architecture.md security.md api.md problem_statement_traceability.md screenshots/
@@ -122,14 +121,14 @@ db-opt-platform/
 │   ├── audit.py events.py metrics.py contracts.py errors.py logging_setup.py pipeline.py api.py
 │   ├── workload_store.py regression_detector.py predicate_intelligence.py index_hygiene.py
 │   ├── cardinality_analyzer.py sql_semantic_diff.py workload_drift.py optimization_budget.py
-│   ├── capability_firewall.py evidence_engine.py benchmark.py          (Addendum R1-R12)
+│   ├── capability_firewall.py evidence_engine.py benchmark.py
 │   ├── gnn/    mapper.py model.py training.py fallback_analytics.py analyzer.py
 │   ├── rl/     state_encoder.py environment.py agent.py policy.py trainer.py fallback_policy.py episode_builder.py
 │   └── agents/ state.py supervisor.py sql_rewriter.py schema_expert.py index_strategist.py nl_intent.py
 ├── dashboard/   app.py streaming_ui.py components.py plots.py
 ├── examples/    slow_queries.sql sample_history.json sample_history.csv
 ├── models/      gnn_bottleneck.pt gnn_metrics.json rl_policy.json rl_metrics.json  (produced by the training scripts)
-└── tests/       15 test modules + fixtures captured from the demo database
+└── tests/       test suites + fixtures captured from the demo database
 ```
 
 ## 4. Problem Statement Traceability Matrix
@@ -623,7 +622,7 @@ CPU only. They are planner estimates unless marked *measured*.
 - Workload-level RL (multi-query index selection under a storage budget) with a larger template set.
 - More rewrite operators with formal equivalence checks.
 - Full-size partition experiments in disposable clones (pg_partman), Citus-based shard simulation.
-- Incident retrieval with learned plan embeddings (R13 is currently heuristic similarity).
+- Incident retrieval with learned plan embeddings.
 - Role-based access control and SSO for the dashboard.
 
 ## 27. Source-PS ambiguity note
@@ -636,7 +635,7 @@ workload records). It should not become a core feature until the official PS con
 
 ---
 
-## 28. Final Upgrade: use your own data
+## 28. Use your own data (Dynamic Ingestion & NLQ)
 
 Two data sources, picked in the sidebar ("Data source"):
 
@@ -672,5 +671,6 @@ Honest limits: the session id is
 ownership, not authentication; NL-to-SQL correctness depends on the generator while the validator only guarantees
 safety; type inference is heuristic; index advice is planner-estimate based; GATv2 and RL are trained on synthetic
 labels; DP covers only the specific aggregate releases under the stated assumptions.
-#   c o d e c W e  
+#   c o d e c W e 
+ 
  

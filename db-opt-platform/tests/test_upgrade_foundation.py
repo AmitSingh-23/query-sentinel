@@ -1,4 +1,4 @@
-"""P1 foundation: migration, resolver, provenance, flags."""
+"""Tests for core platform foundations: metadata migration, resolver, provenance, flags."""
 from __future__ import annotations
 
 import pytest

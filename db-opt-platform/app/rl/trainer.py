@@ -1,4 +1,4 @@
-"""RL training / evaluation loop (Section 21 GENERALIZATION).
+"""Training and evaluation harness for reinforcement learning optimization policies.
 
 Reports training reward, evaluation reward, action distribution, recommendation validity and
 unseen-pattern results. Stopping criteria: max_episodes reached, or the moving average of
@@ -25,7 +25,7 @@ class TrainerConfig:
     tolerance: float = 0.005
     patience: int = 4
     seed: int = 11
-    # Final Upgrade P9 (used only when enabled; defaults keep the original behaviour)
+    # Experience replay buffer (used when prioritized replay is enabled)
     curriculum: bool = False
     prioritized_replay: bool = False
     replay_batch: int = 8

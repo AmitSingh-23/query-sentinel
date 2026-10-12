@@ -1,4 +1,4 @@
-"""Async PostgreSQL connection lifecycle (Section 40).
+"""Async PostgreSQL connection pool management and query execution lifecycle.
 
 asyncpg pool created at application startup and closed at shutdown. Connections are always
 acquired through context managers (never leaked). Analysis statements run in READ ONLY
@@ -27,8 +27,7 @@ log = get_logger("db")
 class Database:
     def __init__(self, settings: Settings | None = None, dsn_kwargs: dict | None = None,
                  server_settings: dict | None = None, max_size: int | None = None, label: str = "demo"):
-        """`dsn_kwargs` / `server_settings` are optional (Final Upgrade P1): when absent the pool connects as
-        the restricted application role to the demo database exactly as before."""
+        """Initialize connection pool settings with fallback to default application credentials."""
         self.settings = settings or get_settings()
         self.pool: asyncpg.Pool | None = None
         self.last_error: str | None = None

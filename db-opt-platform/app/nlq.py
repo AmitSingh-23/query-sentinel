@@ -1,8 +1,8 @@
-"""Schema-aware natural-language-to-SQL (Final Upgrade P4; optimizer integration in P5).
+"""Schema-aware natural-language-to-SQL query generation and safety verification.
 
 Flow: identify data source -> load schema metadata (SchemaInspector snapshot + stored column stats) -> select
 relevant tables/columns -> build compact schema context -> generate SQL (LLM when configured, otherwise the
-deterministic template generator) -> validate (10-stage SQLSafetyGate) -> repair on failure -> (P5) optimize ->
+deterministic template generator) -> validate (10-stage SQLSafetyGate) -> repair on failure -> optimize ->
 execute -> explain.
 
 No table or column name is hard-coded anywhere in this path: everything comes from the active schema.
@@ -46,9 +46,7 @@ GEN_TEMPLATE = (
     "Reply with JSON: {\"understanding\": str, \"tables_used\": [str], \"columns_used\": [str], \"sql\": str}\n")
 
 
-# =====================================================================================================
 # schema snapshot + context
-# =====================================================================================================
 @dataclass
 class TableInfo:
     name: str
@@ -219,9 +217,7 @@ def schema_context_text(tables: dict[str, TableInfo], selected: list[str], scope
     return "\n".join(lines)
 
 
-# =====================================================================================================
 # deterministic template generator (no LLM)  [ANALYTIC FALLBACK]
-# =====================================================================================================
 _QUESTION_WORDS = {"count", "total", "sum", "average", "avg", "mean", "max", "maximum", "min", "minimum", "top",
                    "number", "how", "many", "by", "per", "all", "show", "list", "highest", "lowest", "last", "year",
                    "month", "week", "day"}
@@ -404,9 +400,7 @@ def template_generate(question: str, tables: dict[str, TableInfo], selected: lis
             "columns_used": used_cols, "sql": sql, "assumptions": assumptions, "relative_date": rel}
 
 
-# =====================================================================================================
 # service
-# =====================================================================================================
 class NLQService:
     def __init__(self, llm=None, audit=None, settings=None):
         self.settings = settings or get_settings()

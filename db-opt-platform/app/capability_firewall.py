@@ -1,4 +1,4 @@
-"""Agent capability firewall (Addendum R10).
+"""Agent capability firewall enforcing least-privilege tool execution.
 
 Every agent/tool operation maps to an explicit capability. No agent receives a production-write
 capability. Denied operations raise CapabilityDenied and produce an audit event. The same
@@ -26,7 +26,7 @@ class Capability(str, Enum):
     GENERATE_REPORT = "GENERATE_REPORT"
     GENERATE_MIGRATION = "GENERATE_MIGRATION"
     CALL_LLM = "CALL_LLM"
-    # Defined so that it can be explicitly REFUSED - never granted to any agent.
+    # Explicitly blocked capability - never granted to agents.
     PRODUCTION_WRITE = "PRODUCTION_WRITE"
 
 

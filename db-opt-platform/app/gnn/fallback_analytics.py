@@ -1,4 +1,4 @@
-"""Deterministic analytic fallback for bottleneck diagnosis (Section 20, MODE 2).
+"""Deterministic rule-based analyzer for identifying plan bottlenecks when GNN model is offline.
 
 Used when no valid GNN checkpoint exists, and always run alongside the GNN to provide
 human-readable evidence. Output uses a RULE-CONFIDENCE LABEL (high/medium/low), never a

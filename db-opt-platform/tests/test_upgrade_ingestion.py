@@ -1,4 +1,4 @@
-"""P2 dynamic ingestion + additive schema evolution (real PostgreSQL for DB-touching tests)."""
+"""Tests for dynamic dataset ingestion and additive schema evolution."""
 from __future__ import annotations
 
 import json
@@ -20,7 +20,7 @@ def _file(tmp_path, name, content, enc="utf-8"):
     return p
 
 
-# ----------------------------------------------------------------------------- pure (no DB)
+# In-memory parser tests
 def test_identifier_normalisation():
     assert normalize_identifier("Order Date") == "order_date"
     assert normalize_identifier("CustomerID") == "customer_id"
@@ -83,7 +83,7 @@ def test_sql_and_unknown_extensions_rejected(tmp_path):
         assert ei.value.category == ErrorCategory.UPLOAD_REJECTED
 
 
-# ----------------------------------------------------------------------------- live
+# Live database tests
 @pytest.fixture
 def svc():
     s = DatasetIngestionService()

@@ -1,4 +1,4 @@
-"""SQL safety gate for all generated SQL (Final Upgrade P4).
+"""Multi-stage SQL safety validator verifying syntax, read-only permissions, and allowed functions.
 
 Ten stages, in order, fail fast:
   1 input hygiene + exactly one statement      6 column binding (friendly suggestions; EXPLAIN is authoritative)
@@ -140,7 +140,7 @@ class SQLSafetyGate:
         self.snapshot = {t.lower(): [c.lower() for c in cols] for t, cols in snapshot.items()}
         self.settings = settings or get_settings()
 
-    # ------------------------------------------------------------------ stages 1-7 (static)
+    # Static analysis stages
     def check_static(self, sql: str) -> tuple[ast.SelectStmt, _Walk, SafetyResult]:
         if sql is None or not str(sql).strip():
             raise SQLRejected(1, "empty SQL")
@@ -264,7 +264,7 @@ class SQLSafetyGate:
                 notes.append(note)
         return notes
 
-    # ------------------------------------------------------------------ stages 8-10 (database)
+    # Database verification stages
     async def _enter(self, conn: asyncpg.Connection, timeout_ms: int) -> None:
         await conn.execute(f"SET LOCAL statement_timeout = {int(timeout_ms)}")
         await conn.execute("SET LOCAL lock_timeout = 2000")

@@ -1,4 +1,4 @@
-"""Structured error taxonomy (Section 55). Messages never include raw SQL, literals or secrets."""
+"""Structured error taxonomy ensuring sensitive SQL, literals, and secrets are never leaked."""
 from __future__ import annotations
 
 from enum import Enum
@@ -30,7 +30,7 @@ class ErrorCategory(str, Enum):
     QUARANTINED = "quarantined"
     NOT_FOUND = "not_found"
     INTERNAL = "internal_error"
-    # Final upgrade (machine-readable codes, Section P13)
+    # Extended machine-readable error codes
     SOURCE_NOT_FOUND = "source_not_found"
     SOURCE_FORBIDDEN = "source_forbidden"
     SANDBOX_EXPIRED = "sandbox_expired"

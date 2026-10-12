@@ -1,4 +1,4 @@
-"""Per-request event bus + Server-Sent Events serialisation (Section 38).
+"""Per-request event bus with Server-Sent Events (SSE) streaming serialization.
 
 SSE is used because the stream is one-directional (backend -> dashboard). Each request has
 an isolated history; late subscribers get the full replay. Event messages are redacted and
@@ -30,7 +30,7 @@ EXTRA_EVENTS = [
     "AGENT_SKIPPED", "VALIDATION_COMPLETE", "MIGRATION_GENERATED", "PLAN_REGRESSION",
     "WORKLOAD_DRIFT", "SEARCH_BUDGET_EXHAUSTED", "CAPABILITY_DENIED", "PRIVACY_BLOCKED",
     "SECURITY_REJECTED", "LLM_CALL", "HEARTBEAT",
-    # Final Upgrade P13 (Ask Your Database / BYOD progress)
+    # Dynamic dataset & NL query progress events
     "NLQ_STARTED", "NLQ_SCHEMA_LOADED", "NLQ_SQL_VALIDATED", "NLQ_SQL_REJECTED", "NLQ_OPTIMIZATION_STARTED",
     "NLQ_OPTIMIZATION_COMPLETE", "NLQ_EXECUTED", "NLQ_COMPLETE", "PRIVACY_BUDGET_EXHAUSTED",
 ]

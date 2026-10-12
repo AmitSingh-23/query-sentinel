@@ -1,4 +1,4 @@
-"""Addendum R1-R12 continuity checkpoints: each research module has a concrete test."""
+"""Validation tests for research and optimization modules."""
 import json
 
 import pytest
@@ -33,7 +33,7 @@ def rec(fp, plan, ts, cost, ms=None, hist=None, calls=10, per_table=None):
                           access_features={"per_table": per_table or {}})
 
 
-# R2 ---------------------------------------------------------------------------------------
+# Plan regression detection
 def test_plan_regression_requires_evidence():
     h = [rec("q", "pA", "2026-09-01T00", 100, 5, {"Index Scan": 1}), rec("q", "pA", "2026-09-01T01", 100, 5, {"Index Scan": 1}),
          rec("q", "pB", "2026-09-02T00", 180, 9, {"Seq Scan": 1})]
@@ -47,7 +47,7 @@ def test_plan_regression_requires_evidence():
     assert cur and cur["event"] == "PLAN_REGRESSION"
 
 
-# R3 ---------------------------------------------------------------------------------------
+# Predicate intelligence
 def test_predicate_intelligence_roles():
     ap = PredicateAnalyzer(column_index=IDX).analyze(
         "SELECT o.order_id FROM orders o JOIN order_items i ON i.order_id = o.order_id "
@@ -70,7 +70,7 @@ def test_predicate_intelligence_correlated_subquery():
     assert ap.correlated_subqueries and ap.correlated_subqueries[0]["inner_tables"] == ["order_items"]
 
 
-# R4 ---------------------------------------------------------------------------------------
+# Index hygiene
 def test_index_hygiene_is_report_only():
     h = analyze_hygiene(schema())
     assert {m["table"] for m in h["missing_fk_indexes"]} == {"orders", "order_items"}
@@ -79,7 +79,7 @@ def test_index_hygiene_is_report_only():
     assert is_redundant(["status", "order_date"], "orders", schema())[0] is False
 
 
-# R5 ---------------------------------------------------------------------------------------
+# Cardinality estimation
 def test_cardinality_never_invents_actual_rows():
     out = analyze_cardinality(parse_explain(PLANS["scenario_1"]))
     assert out["available"] is False and out["nodes"] == []
@@ -94,7 +94,7 @@ def test_cardinality_with_actuals():
     assert out["extended_statistics_candidates"][0]["status"].startswith("advisory")
 
 
-# R6 ---------------------------------------------------------------------------------------
+# Semantic diff
 def test_semantic_diff_detects_changes():
     a = "SELECT a, b FROM t WHERE x = $1 ORDER BY a"
     d = diff(a, "SELECT a, b FROM t WHERE x = $1 AND y = $2 ORDER BY a")
@@ -105,7 +105,7 @@ def test_semantic_diff_detects_changes():
     assert not verify("remove_duplicate_predicates", d2)[0]
 
 
-# R8 ---------------------------------------------------------------------------------------
+# Workload drift
 def test_workload_drift_measured_not_fabricated():
     assert js_divergence({"a": 1}, {"a": 1}) == 0.0 and js_divergence({"a": 1}, {"b": 1}) == 1.0
     hist = [rec(f"q{i % 2}", "p1", f"2026-09-01T0{i}", 10, per_table={"orders": {"eq": ["tenant_id"]}}) for i in range(6)]

@@ -1,4 +1,4 @@
-"""P5 major tests: NL -> validated SQL -> EXISTING optimizer on demo and dynamic sources (+ search budget)."""
+"""Integration tests: NL query -> validated SQL -> optimizer execution on active sources."""
 from __future__ import annotations
 
 import os

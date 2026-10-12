@@ -1,4 +1,4 @@
-"""Metric provenance (Final Upgrade Section 7).
+"""Metric and recommendation provenance tracking across pipeline stages.
 
 Every metric, label or recommendation produced by the new paths carries one or more provenance tags.
 The tag travels with the value (`{"value": ..., "provenance": [...]}`) and the dashboard renders it as a badge.

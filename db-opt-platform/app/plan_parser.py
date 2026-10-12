@@ -1,4 +1,4 @@
-"""PostgreSQL EXPLAIN (FORMAT JSON) analysis (Section 18).
+"""PostgreSQL EXPLAIN (FORMAT JSON) plan tree parser, cost attributor, and sanitizer.
 
 Builds a reusable flat plan tree (nodes + parent/child edges) with exclusive cost, operator
 histogram, plan fingerprint and shape. `sanitize_plan` replaces literals in expressions and
@@ -135,7 +135,7 @@ def plan_fingerprint(nodes: list[PlanNode]) -> str:
     return "plan_" + hashlib.sha256("|".join(parts).encode()).hexdigest()[:16]
 
 
-# ---------------------------------------------------------------------------- sanitizer
+# Plan sanitizer
 _MULTIWORD_TYPES = r"(?:timestamp|time)(?:\(\d+\))? with(?:out)? time zone|character varying(?:\(\d+\))?|double precision|bit varying"
 _TYPED_LITERAL = re.compile(r"'(?:[^']|'')*'(?:::(?:" + _MULTIWORD_TYPES + r'|"?[\w.]+"?(?:\[\])?(?:\(\d+(?:,\d+)?\))?))*')
 _NUMBER = re.compile(r"(?<![\w$.])-?\d+(?:\.\d+)?(?![\w.])")

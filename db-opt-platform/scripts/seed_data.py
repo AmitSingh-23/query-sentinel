@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic synthetic data generator for the QuerySentinel demo database (Section 10).
+"""Synthetic data generator seeding realistic multi-tenant e-commerce workloads.
 
 * streams rows to PostgreSQL with COPY in fixed-size batches (never holds the
   full dataset in RAM)
@@ -136,7 +136,7 @@ def seed(n_tenants: int, n_orders: int, n_items: int, seed_value: int, reset: bo
         conn.commit()
 
     t0 = time.time()
-    # ---------------- tenants ----------------
+    # Tenants
     tenant_ids = []
     buf = io.StringIO()
     for i in range(n_tenants):

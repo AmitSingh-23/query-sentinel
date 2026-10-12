@@ -1,4 +1,4 @@
-"""HypoPG simulation sandbox (Section 31).
+"""HypoPG simulation sandbox for evaluating hypothetical indexes without disk or lock overhead.
 
 Workflow: 1 baseline EXPLAIN -> 2 translate + validate candidate DDL (done by the validator) ->
 3 create hypothetical index(es) with `SELECT * FROM hypopg_create_index($1)` -> 4 EXPLAIN again

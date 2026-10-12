@@ -1,5 +1,5 @@
 """RL policy facade used by the pipeline: trained policy if available, else deterministic
-fallback - and the mode is always reported (Section 69)."""
+fallback - with execution mode explicitly reported in results."""
 from __future__ import annotations
 
 from typing import Any

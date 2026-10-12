@@ -1,4 +1,4 @@
-"""Blast-radius analysis (Section 33) and write-overhead estimation (Section 34).
+"""Blast-radius analysis and write-overhead estimation for proposed indexes.
 
 pg_stat_statements -> candidate INSERT/UPDATE/DELETE statements -> pglast parsing -> written /
 referenced tables -> match target table -> rank (calls) -> analyse up to the top three.

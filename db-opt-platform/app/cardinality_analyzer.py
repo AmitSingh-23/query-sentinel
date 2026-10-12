@@ -1,4 +1,4 @@
-"""Cardinality-error analysis (Addendum R5).
+"""Cardinality error detection comparing PostgreSQL planner estimates with runtime realities.
 
 Compares planner-estimated rows with ACTUAL rows only when actual values exist (EXPLAIN ANALYZE
 from the opt-in benchmark sandbox, or ingested historical plans that contain them). Actual row

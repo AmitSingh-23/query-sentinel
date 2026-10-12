@@ -1,4 +1,4 @@
-"""PostgreSQL instrumentation layer (Section 35).
+"""PostgreSQL instrumentation collecting statistics via pg_stat_statements and catalog metadata.
 
 This prototype does NOT implement a native C-level planner hook. Its instrumentation is
 extension/API based: pg_stat_statements, HypoPG, EXPLAIN (FORMAT JSON) and the system
@@ -104,7 +104,7 @@ _IDENT = re.compile(r"^[a-z_][a-z0-9_]{0,62}$")
 
 class PostgresInstrumentation:
     def __init__(self, db: Database, schema: str = "public"):
-        """`schema` (Final Upgrade P1, default 'public') selects the catalog namespace that tables/columns/
+        """`schema` (default 'public') selects the catalog namespace that tables/columns/
         indexes/foreign keys are read from. It must be a plain lower-case identifier."""
         if not _IDENT.match(schema):
             raise ValueError("invalid schema name")

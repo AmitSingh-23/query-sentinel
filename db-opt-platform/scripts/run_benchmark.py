@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible benchmark + ablation workflow (Sections 36 / 61, Addendum R12).
+"""Benchmark and ablation test runner evaluating optimization impact across demo workloads.
 
     python scripts/run_benchmark.py                 # planner-estimate mode, all demo queries
     BENCHMARK_ENABLED=true BENCHMARK_ADMIN_DSN=postgresql://...disposable... \\

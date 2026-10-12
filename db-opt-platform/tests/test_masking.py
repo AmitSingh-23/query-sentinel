@@ -1,4 +1,4 @@
-"""Privacy vault, PII filter, bitmask and the zero-leak LLM guard (Sections 12-15, 60)."""
+"""Tests for privacy vault, PII filter, bitmask encoding, and outgoing LLM guard."""
 import pytest
 
 from app.errors import ErrorCategory, PrivacyViolation
@@ -102,7 +102,7 @@ def test_bitmask_flags(obfuscator):
     assert r["privacy_bitmask"] & PrivacyFlag.CONTAINS_JOIN
 
 
-# --------------------------------------------------------------- outgoing LLM guard
+# Outgoing LLM guard
 def test_guard_allows_clean_payload(obfuscator):
     r = obfuscator.mask_sql(SQL, "r1")
     g = OutgoingPayloadGuard(obfuscator)

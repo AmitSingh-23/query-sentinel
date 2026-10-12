@@ -1,4 +1,4 @@
-"""FastAPI endpoints (Section 39/60): health, mask, analyze, optimize, ingestion, stream."""
+"""Tests for FastAPI endpoints: health, mask, analyze, optimize, ingestion, stream."""
 import json
 from pathlib import Path
 

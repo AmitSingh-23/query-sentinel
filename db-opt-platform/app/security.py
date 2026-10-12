@@ -1,4 +1,4 @@
-"""Security gateway (Section 11).
+"""Security gateway: parses and validates incoming queries to ensure only safe, read-only SELECT operations enter analysis.
 
 Only a single, read-only SELECT statement may enter the analysis path. User SQL is never
 executed directly: the only command built from it is

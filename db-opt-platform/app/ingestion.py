@@ -1,4 +1,4 @@
-"""Slow-query and historical plan ingestion engine (Section 16).
+"""Slow-query and historical plan log ingestion engine.
 
 raw source -> PII pre-filter -> AST processing -> literal parameterisation ->
 structural pseudonymisation -> structural feature extraction -> privacy verification ->
@@ -70,7 +70,7 @@ class IngestionEngine:
         self.schema = schema
         self.detector = PIIDetector()
 
-    # ----------------------------------------------------------------- parsers
+    # Log parsers
     @staticmethod
     def parse_json(payload: str | bytes | list | dict) -> list[dict]:
         data = json.loads(payload) if isinstance(payload, (str, bytes)) else payload
@@ -93,7 +93,7 @@ class IngestionEngine:
                     r["plan"] = None
         return rows
 
-    # ----------------------------------------------------------------- core
+    # Core ingestion
     def _column_index_masked(self, batch_id: str) -> dict[str, set[str]]:
         if not self.schema:
             return {}

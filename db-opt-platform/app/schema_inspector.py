@@ -1,4 +1,4 @@
-"""Schema inspector (Section 17).
+"""Inspects catalog structural metadata and builds safe pseudonymized schema representations.
 
 Collects ONLY safe structural metadata: names, types, nullability, keys, indexes, estimated
 row counts, sizes and selected planner statistics. Row contents are never read. Two views:
@@ -64,7 +64,7 @@ class SchemaInspector:
 
 
 class SchemaCache:
-    """Final Upgrade P1/P2: per-source cache keyed by (data_source_id, schema_version) with invalidation.
+    """Per-source schema cache keyed by (data_source_id, schema_version) with TTL invalidation.
     The original `SchemaInspector.inspect()` is unchanged and uncached."""
 
     def __init__(self) -> None:

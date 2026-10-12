@@ -1,4 +1,4 @@
-"""Workload intelligence store (Addendum R1).
+"""Workload intelligence store caching query fingerprints, execution plans, and access statistics.
 
 Holds ONLY safe, anonymised workload metadata: fingerprints, plan shape, time bucket,
 call counts, timings when legitimately available, planner cost, row estimates, operator
@@ -39,7 +39,7 @@ class WorkloadRecord(BaseModel):
     statement_type: str = "SelectStmt"
     source: str = "ingestion"
     recommendation_outcome: str | None = None
-    data_source_id: str = "demo"               # Final Upgrade: workload namespace (additive, default demo)
+    data_source_id: str = "demo"               # Data source namespace
 
 
 def hour_bucket(ts: str | datetime | None) -> str:
@@ -65,7 +65,7 @@ class WorkloadStore:
         self.namespace = namespace
 
     def scoped(self, namespace: str) -> WorkloadStore:
-        """View of the same store restricted to one data source's workload namespace (Final Upgrade P5).
+        """View of the store restricted to one data source's workload namespace.
         Records added through the view are tagged with that namespace, so sandbox/dynamic analyses never
         pollute the demo workload."""
         view = WorkloadStore.__new__(WorkloadStore)
@@ -110,7 +110,7 @@ class WorkloadStore:
         return sum(r.call_count for r in self.all())
 
     def frequency_weight(self, query_fingerprint: str) -> float:
-        """Documented workload weight used by the RL reward (R7):
+        """Workload execution frequency weight applied to the RL reward calculation:
         w = 1 + log10(1 + calls_for_fingerprint)  (1.0 when no history)."""
         return 1.0 + math.log10(1 + self.frequency(query_fingerprint))
 
@@ -132,7 +132,7 @@ class WorkloadStore:
         return hist, recent
 
     def context_for(self, query_fingerprint: str) -> dict[str, Any]:
-        """Historical workload context combined with the current query (R1)."""
+        """Historical workload context combined with the current query execution profile."""
         hist = self.history(query_fingerprint)
         if not hist:
             return {"available": False, "records": 0, "frequency_weight": 1.0}

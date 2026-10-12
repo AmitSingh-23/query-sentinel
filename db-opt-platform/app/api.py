@@ -1,4 +1,4 @@
-"""FastAPI backend (Section 39) with Server-Sent Events (Section 38).
+"""FastAPI backend with Server-Sent Events (SSE) streaming support.
 
     uvicorn app.api:app --host 0.0.0.0 --port 8000
 
@@ -35,7 +35,7 @@ log = get_logger("api")
 MAX_BODY_SQL = 20000
 
 
-# ------------------------------------------------------------------ request models
+# Request models
 class SQLRequest(BaseModel):
     sql: str = Field(..., min_length=1, max_length=MAX_BODY_SQL)
     request_id: str | None = Field(None, pattern=r"^[A-Za-z0-9_.-]{6,64}$")
@@ -67,7 +67,7 @@ class CollectRequest(BaseModel):
     min_mean_ms: float = Field(0.0, ge=0)
 
 
-# ------------------------------------------------------------------ app factory
+# Application factory
 def create_app(services: Services | None = None, connect: bool = True) -> FastAPI:
     settings = get_settings()
     configure_logging(settings.log_level)
@@ -78,7 +78,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         if connect:
             await svc.startup()
             if settings.qs_run_meta_migration and svc.db.available:
-                # Final Upgrade P1: additive qs_meta migration after the existing initialisation.
+                # Apply metadata migrations if enabled and database is reachable.
                 try:
                     from app.meta_migration import run_meta_migration
                     await run_meta_migration(settings)
@@ -88,7 +88,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         app.state.pipeline = Pipeline(svc)
         app.state.nl = NLIntentAssistant(svc.instr, svc.obfuscator, svc.store, svc.known_tables)
         app.state.tasks = set()
-        from app.api_upgrade import (  # Final Upgrade P13 (additive)
+        from app.api_upgrade import (
             shutdown_upgrade,
             startup_upgrade,
         )
@@ -109,7 +109,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         if expected and x_api_key != expected:
             raise HTTPException(status_code=401, detail={"error": "unauthorized", "message": "invalid API key"})
 
-    from app.api_upgrade import build_router  # Final Upgrade P13: additive routers
+    from app.api_upgrade import build_router
     app.include_router(build_router(require_key))
 
     @app.exception_handler(QuerySentinelError)
@@ -128,7 +128,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
     def new_rid(given: str | None = None) -> str:
         return given or f"qs-{uuid.uuid4().hex[:16]}"
 
-    # ---------------------------------------------------------------- health / status
+    # Health & status endpoints
     @app.get("/api/v1/health")
     async def health(request: Request):
         s = services_(request)
@@ -151,7 +151,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
     async def status(request: Request):
         return await services_(request).status()
 
-    # ---------------------------------------------------------------- privacy
+    # Privacy & obfuscation endpoints
     @app.post("/api/v1/mask", dependencies=[Depends(require_key)])
     async def mask(body: SQLRequest, request: Request):
         s = services_(request)
@@ -166,7 +166,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         finally:
             s.obfuscator.clear_vault(rid)
 
-    # ---------------------------------------------------------------- analysis
+    # Query analysis & optimization endpoints
     @app.post("/api/v1/analyze", dependencies=[Depends(require_key)])
     async def analyze(body: SQLRequest, request: Request):
         """Security -> privacy -> schema -> EXPLAIN -> graph -> GNN (no agents / no sandbox)."""
@@ -247,7 +247,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         evs = services_(request).audit.events_for(request_id)
         return {"request_id": request_id, "events": [e.model_dump() for e in evs]}
 
-    # ---------------------------------------------------------------- ingestion / workload
+    # Workload ingestion endpoints
     def _engine(s: Services, schema=None) -> IngestionEngine:
         return IngestionEngine(s.obfuscator, s.store, s.guard, schema)
 
@@ -304,7 +304,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
             raise QuerySentinelError(ErrorCategory.DB_UNAVAILABLE, "database unavailable", stage="hygiene")
         return analyze_hygiene(schema)
 
-    # ---------------------------------------------------------------- benchmark
+    # Benchmark endpoints
     @app.post("/api/v1/benchmark", dependencies=[Depends(require_key)])
     async def benchmark(body: BenchmarkRequest, request: Request):
         s = services_(request)
@@ -328,7 +328,7 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
         return {"examples": [{"index": i, "name": names[i] if i < len(names) else f"query {i}", "sql": q}
                              for i, q in enumerate(qs)]}
 
-    # ---------------------------------------------------------------- natural language
+    # Natural language assistant endpoints
     @app.post("/api/v1/nl/ask", dependencies=[Depends(require_key)])
     async def nl_ask(body: NLRequest, request: Request):
         nl: NLIntentAssistant = request.app.state.nl

@@ -1,4 +1,4 @@
-"""RL state encoding (Section 21 RL STATE).
+"""Encodes execution plan and query features into compact tabular RL state representations.
 
 The state is built ONLY from anonymised structural features and discretised into a compact
 key for tabular Q-learning. No raw values, no identifiers (the query fingerprint is kept as

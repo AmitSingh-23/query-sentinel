@@ -1,4 +1,4 @@
-"""Final Upgrade dashboard pieces (P13): data-source selector, dataset upload, Ask Your Database.
+"""Streamlit UI views for dataset upload, data source management, and natural language queries.
 
 V3 light glass presentation: dense tables, restrained colour, provenance badges beside every metric. Every call goes through the backend API (never directly to PostgreSQL).
 """
@@ -85,7 +85,7 @@ def show_error(out: dict) -> None:
         st.dataframe(det["conflicts"], width="stretch", hide_index=True)
 
 
-# ------------------------------------------------------------------ sidebar: data source selector
+# Sidebar: data source selector
 def sidebar_sources(api: UpgradeClient) -> dict:
     ss = st.session_state
     ss.setdefault("qs_source", "demo")
@@ -208,7 +208,7 @@ def source_for_sql(api: UpgradeClient, sql: str, active: dict) -> dict:
     return active
 
 
-# ------------------------------------------------------------------ dataset upload (preview -> commit)
+# Dataset upload & preview
 def dataset_upload(api: UpgradeClient, max_mb: int) -> None:
     ss = st.session_state
     st.caption(f"Accepted: CSV (comma, semicolon, tab, pipe; UTF-8/BOM/Latin-1) or JSON (array, JSON Lines, object "
@@ -256,7 +256,7 @@ def dataset_upload(api: UpgradeClient, max_mb: int) -> None:
                 show_error(res)
 
 
-# ------------------------------------------------------------------ Ask Your Database (10 sections)
+# Ask Your Database assistant
 def ask_your_database(api: UpgradeClient, src: dict) -> None:
     ss = st.session_state
     st.markdown('<div class="qs-section" style="margin-top:8px">Ask your database</div><div class="qs-section-sub">'

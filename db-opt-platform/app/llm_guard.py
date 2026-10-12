@@ -1,4 +1,4 @@
-"""Zero-leak outgoing LLM payload guard (Sections 4.1 and 15).
+"""Outgoing LLM payload guard ensuring no sensitive identifiers or literals leak to AI providers.
 
 Every payload leaving the trusted backend for an external LLM passes `inspect()`. If any
 forbidden content is present the request is BLOCKED, an audit event is written with the

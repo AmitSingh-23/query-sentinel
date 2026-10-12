@@ -1,4 +1,4 @@
-"""Workload drift detection (Addendum R8).
+"""Workload drift detection using Jensen-Shannon divergence across query fingerprints.
 
 Compares RECENT vs HISTORICAL distributions of safe structural features - query fingerprints,
 predicate patterns, join patterns, plan fingerprints, table access - with the Jensen-Shannon

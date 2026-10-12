@@ -1,4 +1,4 @@
-"""Final Upgrade API routers (P13). Additive: every existing endpoint keeps its contract.
+"""Extended API routes for dynamic dataset ingestion, natural language queries, and source management.
 
 Conventions follow app/api.py: prefix /api/v1, JSON error envelope {error, message, stage, details}, optional
 X-API-Key. Every request for a data source carries `data_source_id` (absent = demo) and the browser session id in
@@ -92,7 +92,7 @@ def build_router(require_key) -> APIRouter:
     def st(request: Request):
         return request.app.state
 
-    # ------------------------------------------------------------------ status
+    # Status & capabilities
     @r.get("/upgrade/status")
     async def upgrade_status(request: Request, x_session_id: str | None = Header(default=None)):
         s = st(request)
@@ -107,7 +107,7 @@ def build_router(require_key) -> APIRouter:
                 "differential_privacy": {"enabled": feature_flags.enabled("dp"), **accountant.snapshot(scope)},
                 "provenance_tags": list(ALL_TAGS), "raw_data_exposed_to_ai": 0}
 
-    # ------------------------------------------------------------------ sources
+    # Data source management
     @r.get("/sources")
     async def list_sources(request: Request, x_session_id: str | None = Header(default=None)):
         sess = _session(x_session_id)
@@ -141,7 +141,7 @@ def build_router(require_key) -> APIRouter:
              "primary_key": t.pk, "foreign_keys": [{"columns": a, "ref_table": b, "ref_columns": c}
                                                    for a, b, c in t.fks]} for t in tables.values()]}
 
-    # ------------------------------------------------------------------ dataset ingestion
+    # Dynamic dataset ingestion
     @r.post("/data/preview")
     async def data_preview(request: Request, filename: str = Query(..., max_length=200),
                            dataset_name: str | None = Query(None, max_length=60),
@@ -195,7 +195,7 @@ def build_router(require_key) -> APIRouter:
             "FROM qs_meta.ingestion_runs WHERE data_source_id = $1 ORDER BY created_at DESC LIMIT 50", data_source_id)
         return {"runs": [{**dict(x), "created_at": x["created_at"].isoformat()} for x in rows]}
 
-    # ------------------------------------------------------------------ NL analysis
+    # Natural language query processing
     async def _run_nlq(request: Request, body: NLQBody, sess: str | None, run_id: str | None = None):
         from app.nlq_optimizer import optimize
         s = st(request)
@@ -321,7 +321,7 @@ def build_router(require_key) -> APIRouter:
         schema_cache.invalidate(ctx.id)
         return out
 
-    # ------------------------------------------------------------------ index portfolio
+    # Index portfolio analysis
     @r.get("/index-portfolio")
     async def index_portfolio(request: Request, data_source_id: str | None = None,
                               x_session_id: str | None = Header(default=None)):

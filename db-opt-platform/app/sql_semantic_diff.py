@@ -1,4 +1,4 @@
-"""SQL semantic-diff safety (Addendum R6).
+"""AST-based semantic diffing to verify structural equivalence between original and rewritten SQL.
 
 Compares the pglast ASTs of the original and the rewritten statement and reports structural
 changes: tables, output columns, WHERE predicates, JOIN structure, GROUP BY, ORDER BY, LIMIT,
@@ -136,7 +136,7 @@ def verify(rule: str, report: dict[str, Any]) -> tuple[bool, list[str]]:
     return not problems, problems
 
 
-# ------------------------------------------------------------------ Final Upgrade P6: semantic-risk screening
+# Semantic risk assessment screening
 def risk_screen(original_sql: str, rewritten_sql: str, rule: str | None = None) -> dict[str, Any]:
     """Semantic-risk screening (NOT a proof of equivalence). Returns LOW / MEDIUM / HIGH with reasons.
     HIGH = blocked (never applied, never sent to HypoPG/sandbox as a rewrite); MEDIUM = human review."""

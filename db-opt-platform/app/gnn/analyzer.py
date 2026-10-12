@@ -1,4 +1,4 @@
-"""GNN inference with explicit model-mode transparency (Sections 20 and 69).
+"""Execution plan bottleneck analyzer with model inference and analytic fallback.
 
 MODE 1 trained: valid checkpoint -> GCN inference; confidence = softmax probability.
 MODE 2 analytic_fallback: checkpoint missing/invalid -> deterministic rules; confidence is a
@@ -29,7 +29,7 @@ class GNNAnalyzer:
             self.model, self.meta = load_checkpoint(path)
         except QuerySentinelError as exc:
             self.load_error = f"{exc.category.value}: {exc.message}"
-        # Final Upgrade P8: GATv2 path, loaded lazily and only used when QS_FEATURE_GATV2 is on
+        # Optional GATv2 attention model loaded when enabled
         self.gat_model = None
         self.gat_meta: dict[str, Any] = {}
         self.gat_error: str | None = None
