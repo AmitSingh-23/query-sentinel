@@ -25,7 +25,7 @@ Code Utsava X.0 · NIT Raipur · Author: **Amit Singh Bisht**
 10. [LangGraph design](#10-langgraph-design)
 11. [HypoPG methodology](#11-hypopg-methodology)
 12. [Blast-radius methodology](#12-blast-radius-methodology)
-13. [Partitioning / sharding advisory methodology](#13-partitioning--sharding-advisory-methodology)
+13. [Partitioning / sharding advisory methodology](#13-partitioning-sharding-advisory-methodology)
 14. [API and SSE documentation](#14-api-and-sse-documentation)
 15. [Dashboard walkthrough](#15-dashboard-walkthrough)
 16. [Docker setup](#16-docker-setup)
@@ -40,6 +40,7 @@ Code Utsava X.0 · NIT Raipur · Author: **Amit Singh Bisht**
 25. [Limitations](#25-limitations)
 26. [Future work](#26-future-work)
 27. [Source-PS ambiguity note](#27-source-ps-ambiguity-note)
+28. [Use your own data (Dynamic Ingestion & NLQ)](#28-use-your-own-data-dynamic-ingestion-nlq)
 
 ---
 
