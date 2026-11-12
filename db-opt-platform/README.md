@@ -140,7 +140,7 @@ db-opt-platform/
 | Artificial intelligence | `agents/supervisor.py` (LangGraph), `llm.py` | 9-node graph executes for every request | LLM optional; deterministic agents by default |
 | Data privacy | `masking_vault.py`, `pii.py`, `llm_guard.py` | Tests: no literal / PII / real identifier reaches the LLM payload | Regex PII detection is not exhaustive |
 | Reinforcement learning | `rl/*`, `scripts/train_rl.py` | Unseen templates: reward 0.77 vs 0.51 for the rule baseline | Small demo workload |
-| Graph neural networks | `gnn/*`, `scripts/train_gnn.py` | Held-out 100 %, unseen plan shapes 83.5 % | Synthetic training labels |
+| Graph neural networks | `gnn/*`, `scripts/train_gnn.py` | Held-out 100 %, unseen plan shapes 70.8 % | Synthetic training labels |
 | Secure anonymised ingestion | `ingestion.py`, `workload_store.py` | 48/48 sample records ingested, 36 with PII anonymised | JSON/CSV demo formats |
 | Composite-index recommendation | `agents/index_strategist.py`, `predicate_intelligence.py` | Scenario B → `(tenant_id, order_date)` | Max 3 key columns |
 | Partitioning/sharding recommendation | `partition_advisor.py`, `structural_sim.py` | Range on `order_date` simulated on a temp copy: 1 of 36 partitions scanned, −94 % cost | Sample-based simulation; deployment still advisory |
@@ -571,7 +571,7 @@ CPU only. They are planner estimates unless marked *measured*.
 | D cast + email | Seq Scan, non-sargable cast | `orders(customer_email)`; range rewrite | 22,036 → 20 (−99.9 %) | 44.3 ms → 0.009 ms (−99.98 %) |
 | E point lookup | Efficient | No change | — | — |
 
-- **GNN:** held-out synthetic plans 100 %. Never-seen plan-shape variants 83.5 %. Agreement with
+- **GNN:** held-out synthetic plans 100 %. Never-seen plan-shape variants 70.8 %. Agreement with
   the analytic rules on the 5 live plans: 4/5. On the correlated subquery the GNN says "join" and
   the rules say "scan"; the dashboard shows both and flags the result as uncertain.
 - **RL** (mean episode reward, higher is better):
