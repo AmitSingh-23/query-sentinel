@@ -1,7 +1,7 @@
 # Problem Statement 4 - Traceability Matrix
 
 Status legend: **Verified** = implemented and exercised by automated tests and/or a live run in
-the build environment (see `.build_state/VERIFY.md`); **Verified (advisory)** = implemented,
+the build environment; **Verified (advisory)** = implemented,
 output intentionally advisory.
 
 | # | PS area | Requirement | Module / file | Demo evidence | Test(s) | Status | Limitation |
