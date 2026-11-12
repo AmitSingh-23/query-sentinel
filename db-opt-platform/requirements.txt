@@ -1,5 +1,5 @@
 # QuerySentinel - pinned to versions verified together in the build environment
-# (Python 3.12/3.13). See .build_state/VERIFY.md for the verification log.
+# (Python 3.12/3.13).
 fastapi==0.142.2
 uvicorn[standard]==0.53.0
 asyncpg==0.31.0

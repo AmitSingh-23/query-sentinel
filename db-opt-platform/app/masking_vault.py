@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import hmac
 import json
+import os
 import re
 import sqlite3
 import threading
@@ -78,9 +79,10 @@ class InMemoryVaultBackend:
 
 class SQLiteVaultBackend:
     """Persistent, multi-worker capable SQLite vault backend."""
-    def __init__(self, ttl_seconds: int = 1800, db_path: str = "vault.sqlite3"):
+    def __init__(self, ttl_seconds: int = 1800, db_path: str | None = None):
         self.ttl = ttl_seconds
-        self.db_path = db_path
+        # VAULT_DB_PATH lets deployments and tests choose where the vault file lives.
+        self.db_path = db_path or os.environ.get("VAULT_DB_PATH", "vault.sqlite3")
         self._init_db()
 
     def _init_db(self):
@@ -116,6 +118,13 @@ class SQLiteVaultBackend:
         with sqlite3.connect(self.db_path) as conn:
             conn.execute("DELETE FROM vault WHERE request_id = ?", (request_id,))
             conn.commit()
+
+    def __len__(self) -> int:
+        """Number of live (non-expired) request vaults, mirroring InMemoryVaultBackend."""
+        with sqlite3.connect(self.db_path) as conn:
+            self._gc(conn)
+            conn.commit()
+            return conn.execute("SELECT COUNT(*) FROM vault").fetchone()[0]
 
 def build_vault_backend() -> VaultBackend:
     s = get_settings()

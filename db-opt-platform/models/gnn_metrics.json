@@ -1,64 +1,64 @@
 {
-  "train_size": 28,
-  "val_size": 9,
+  "train_size": 1600,
+  "val_size": 400,
   "best_val_accuracy": 1.0,
   "heldout_same_distribution": {
     "accuracy": 1.0,
-    "n": 11,
+    "n": 400,
     "confusion": [
       [
-        11,
+        100,
         0,
         0,
         0
       ],
       [
         0,
-        0,
-        0,
-        0
-      ],
-      [
-        0,
-        0,
+        100,
         0,
         0
       ],
       [
         0,
         0,
-        0,
+        100,
         0
+      ],
+      [
+        0,
+        0,
+        0,
+        100
       ]
     ]
   },
   "heldout_unseen_template_variants": {
-    "accuracy": 0.0,
-    "n": 0,
+    "accuracy": 0.7075,
+    "n": 400,
     "confusion": [
       [
+        100,
         0,
         0,
+        0
+      ],
+      [
+        62,
+        38,
         0,
         0
       ],
       [
         0,
         0,
-        0,
+        100,
         0
       ],
       [
+        55,
         0,
         0,
-        0,
-        0
-      ],
-      [
-        0,
-        0,
-        0,
-        0
+        45
       ]
     ]
   },
@@ -77,36 +77,39 @@
     ]
   },
   "class_balance_train": {
-    "0": 28
+    "3": 400,
+    "2": 400,
+    "0": 400,
+    "1": 400
   },
-  "epochs": 30,
+  "epochs": 60,
   "lr": 0.01,
   "seed": 1234,
-  "train_seconds": 0.7,
+  "train_seconds": 7.7,
   "history_tail": [
     {
-      "epoch": 26,
-      "loss": 0.0,
+      "epoch": 56,
+      "loss": 0.0231,
       "val_accuracy": 1.0
     },
     {
-      "epoch": 27,
-      "loss": 0.0,
+      "epoch": 57,
+      "loss": 0.0181,
+      "val_accuracy": 0.995
+    },
+    {
+      "epoch": 58,
+      "loss": 0.0064,
+      "val_accuracy": 0.995
+    },
+    {
+      "epoch": 59,
+      "loss": 0.0034,
       "val_accuracy": 1.0
     },
     {
-      "epoch": 28,
-      "loss": 0.0,
-      "val_accuracy": 1.0
-    },
-    {
-      "epoch": 29,
-      "loss": 0.0,
-      "val_accuracy": 1.0
-    },
-    {
-      "epoch": 30,
-      "loss": 0.0,
+      "epoch": 60,
+      "loss": 0.0051,
       "val_accuracy": 1.0
     }
   ],

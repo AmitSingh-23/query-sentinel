@@ -26,6 +26,12 @@ from app.config import reset_settings_cache  # noqa: E402
 
 reset_settings_cache()
 
+
+@pytest.fixture(autouse=True)
+def _isolated_vault(tmp_path, monkeypatch):
+    """Give every test its own masking-vault file so vault state cannot leak between tests."""
+    monkeypatch.setenv("VAULT_DB_PATH", str(tmp_path / "vault.sqlite3"))
+
 from app.audit import AuditLogger  # noqa: E402
 from app.benchmark import load_demo_queries  # noqa: E402
 from app.events import EventBus  # noqa: E402

@@ -140,7 +140,7 @@ db-opt-platform/
 | Artificial intelligence | `agents/supervisor.py` (LangGraph), `llm.py` | 9-node graph executes for every request | LLM optional; deterministic agents by default |
 | Data privacy | `masking_vault.py`, `pii.py`, `llm_guard.py` | Tests: no literal / PII / real identifier reaches the LLM payload | Regex PII detection is not exhaustive |
 | Reinforcement learning | `rl/*`, `scripts/train_rl.py` | Unseen templates: reward 0.77 vs 0.51 for the rule baseline | Small demo workload |
-| Graph neural networks | `gnn/*`, `scripts/train_gnn.py` | Held-out 100 %, unseen plan shapes 83.5 % | Synthetic training labels |
+| Graph neural networks | `gnn/*`, `scripts/train_gnn.py` | Held-out 100 %, unseen plan shapes 70.8 % | Synthetic training labels |
 | Secure anonymised ingestion | `ingestion.py`, `workload_store.py` | 48/48 sample records ingested, 36 with PII anonymised | JSON/CSV demo formats |
 | Composite-index recommendation | `agents/index_strategist.py`, `predicate_intelligence.py` | Scenario B → `(tenant_id, order_date)` | Max 3 key columns |
 | Partitioning/sharding recommendation | `partition_advisor.py`, `structural_sim.py` | Range on `order_date` simulated on a temp copy: 1 of 36 partitions scanned, −94 % cost | Sample-based simulation; deployment still advisory |
@@ -497,13 +497,16 @@ Delete them to see the explicit fallback modes.
 
 ```bash
 python -m compileall app dashboard scripts tests
-pytest -q                              # 141 tests; LLM calls are mocked
-pytest -q -m "not integration"         # offline only (137 tests, fixtures captured from the demo DB)
+pytest -q                              # full suite; LLM calls are mocked
+pytest -q -m "not integration"         # offline only: 211 pass, 15 skip (they need the demo DB)
 docker compose config --quiet          # compose validation
 ```
 
-The 4 integration tests run automatically when a seeded PostgreSQL with HypoPG is reachable.
-They check extension health, least-privilege enforcement, a real HypoPG experiment with cleanup,
+The integration tests (6 are marked `integration`; 15 more skip themselves offline) run
+automatically when a seeded PostgreSQL with HypoPG is reachable. The offline suite also runs in
+GitHub Actions on every push (`.github/workflows/tests.yml`).
+
+The integration tests check extension health, least-privilege enforcement, a real HypoPG experiment with cleanup,
 and the live end-to-end pipeline.
 
 ## 21. Example queries
@@ -571,8 +574,9 @@ CPU only. They are planner estimates unless marked *measured*.
 | D cast + email | Seq Scan, non-sargable cast | `orders(customer_email)`; range rewrite | 22,036 → 20 (−99.9 %) | 44.3 ms → 0.009 ms (−99.98 %) |
 | E point lookup | Efficient | No change | — | — |
 
-- **GNN:** held-out synthetic plans 100 %. Never-seen plan-shape variants 83.5 %. Agreement with
-  the analytic rules on the 5 live plans: 4/5. On the correlated subquery the GNN says "join" and
+- **GNN:** held-out synthetic plans 100 %. Never-seen plan-shape variants 70.8 %
+  (`models/gnn_metrics.json`). Agreement with the analytic rules on the 5 live plans was 4/5 with
+  an earlier checkpoint and has not been re-measured since the model was retrained. On the correlated subquery the GNN says "join" and
   the rules say "scan"; the dashboard shows both and flags the result as uncertain.
 - **RL** (mean episode reward, higher is better):
   - seen templates: trained 0.599 vs rule fallback 0.512
@@ -610,10 +614,13 @@ CPU only. They are planner estimates unless marked *measured*.
   Neither is ever applied automatically.
 - **Write latency is timed on a small temp copy.** It shows the order of magnitude, not the exact
   production number.
-- **The default vault is in-memory, per process.** Run one backend worker (multi-worker would need a shared vault store).
+- **The masking vault is a local SQLite file.** It defaults to `vault.sqlite3` (set `VAULT_DB_PATH`
+  to move it). Entries are deleted when a request finishes and expire after a TTL, but while they
+  exist they hold the reverse name mapping unencrypted, so the file must stay on the trusted
+  backend host and out of backups that leave it.
 - **Docker images were not built in the build sandbox,** because the registry was blocked by the
   network proxy. `docker compose config` validates. Everything else was verified against a native
-  PostgreSQL 16 + HypoPG install; see `.build_state/VERIFY.md`.
+  PostgreSQL 16 + HypoPG install.
 - **The LLM integration is optional.** It is tested with a mocked provider only; no real LLM call
   was made in the build environment.
 
