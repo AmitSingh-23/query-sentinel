@@ -28,6 +28,6 @@ output intentionally advisory.
 | 20 | Operational Efficiency | Optimization budget, metrics | `app/optimization_budget.py`, `app/metrics.py` | `budget` in final report | `test_core.py` | Verified | - |
 | 21 | Explainability & Trust | Evidence-backed explanation & evidence chain | `app/evidence_engine.py`, `agents/supervisor._evidence_explanation` | Evidence Chain tab | `test_research_modules.py::test_evidence_chain_kinds` | Verified | - |
 | 22 | Optimization Efficacy | >50 % improvement target - measured, never hard-coded | `app/benchmark.py`, `scripts/run_benchmark.py` | Measured −47.6 % (B), −99.98 % (D) runtime in build env | `test_api.py::test_optimize_contract` (measured null by default) | Verified | Environment-dependent |
-| 23 | Robustness / Unseen Pattern Evaluation | Held-out evaluation for GNN and RL | `app/gnn/training.py`, `scripts/train_rl.py` | GNN unseen variants 83.5 %; RL unseen templates | `models/*_metrics.json` | Verified | Demo scale |
+| 23 | Robustness / Unseen Pattern Evaluation | Held-out evaluation for GNN and RL | `app/gnn/training.py`, `scripts/train_rl.py` | GNN unseen variants 70.8 %; RL unseen templates | `models/*_metrics.json` | Verified | Demo scale |
 | 24 | Workload intelligence (R1/R2/R8) | Historical context, plan regression, drift | `workload_store.py`, `regression_detector.py`, `workload_drift.py` | Regressions found in sample history | `test_research_modules.py` | Verified | - |
 | 25 | Source fidelity | Camera/billet line not implemented | README §27 | - | - | Documented | Awaiting official PS confirmation |
