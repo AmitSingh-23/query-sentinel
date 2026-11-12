@@ -1,0 +1,32 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    name: Unit tests (no database)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: db-opt-platform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: db-opt-platform/requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.6,<3"
+          pip install -r requirements.txt
+      # Tests marked "integration" need a live PostgreSQL 16 + HypoPG database
+      # and are run locally with docker compose, not here.
+      - name: Run tests
+        run: python -m pytest -q -m "not integration"
