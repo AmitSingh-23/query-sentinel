@@ -1,6 +1,6 @@
 # QuerySentinel
 
-**Privacy-aware, AI-assisted PostgreSQL query optimizer.** It tells a DBA why a query is slow and how to fix it, without sending customer data or real schema names to an AI model.
+**Privacy-aware AI optimizer for PostgreSQL queries.** It tells a DBA why a query is slow and how to fix it, without sending customer data or real schema names to an AI model.
 
 Finalist, Code Utsava X.0 (NIT Raipur) · Author: [Amit Singh Bisht](https://github.com/AmitSingh-23)
 
