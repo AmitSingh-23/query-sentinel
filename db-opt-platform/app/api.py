@@ -8,6 +8,7 @@ is never echoed in events/logs, and is cleared from the vault when the request f
 from __future__ import annotations
 
 import asyncio
+import hmac
 import uuid
 from contextlib import asynccontextmanager
 from typing import Any, Literal
@@ -106,7 +107,8 @@ def create_app(services: Services | None = None, connect: bool = True) -> FastAP
 
     async def require_key(x_api_key: str | None = Header(default=None)) -> None:
         expected = settings.qs_api_key.get_secret_value()
-        if expected and x_api_key != expected:
+        # compare_digest keeps the comparison time independent of where the keys differ
+        if expected and not hmac.compare_digest((x_api_key or "").encode(), expected.encode()):
             raise HTTPException(status_code=401, detail={"error": "unauthorized", "message": "invalid API key"})
 
     from app.api_upgrade import build_router
